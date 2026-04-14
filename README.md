@@ -19,6 +19,9 @@
 - [Metrik yang Diukur](#-metrik-yang-diukur)
 - [Uji Statistik](#-uji-statistik)
 - [Teknologi](#-teknologi)
+- [Hasil Benchmark](#-hasil-benchmark)
+- [Troubleshooting](#-troubleshooting)
+- [Author](#-author)
 
 ---
 
@@ -360,6 +363,129 @@ python -m analysis.report_tables
 | **Data Analysis** | pandas, numpy, scipy |
 | **Visualization** | matplotlib, seaborn |
 | **Statistical Tests** | scipy.stats, scikit-posthocs, statsmodels |
+
+---
+
+## 📊 Hasil Benchmark
+
+Berikut adalah ringkasan hasil benchmark dari eksperimen yang telah dilakukan (rata-rata ± std dev dari 5 repetisi):
+
+### Read-Heavy Workload (95:5)
+
+| Strategi | Simple (ms) | Medium (ms) | Complex (ms) | Simple QPS | Medium QPS | Complex QPS |
+|----------|:-----------:|:-----------:|:------------:|:----------:|:----------:|:-----------:|
+| **Latency-Based** | **10.22 ± 0.73** | **29.64 ± 1.83** | **79.06 ± 5.58** | **1772** | **677** | **254** |
+| Load-Based | 10.71 ± 0.71 | 32.74 ± 1.87 | 84.26 ± 4.09 | 1694 | 612 | 238 |
+| Least-Conn | 10.79 ± 0.53 | 32.35 ± 2.00 | 84.25 ± 2.72 | 1701 | 620 | 238 |
+| Weighted-RR | 11.46 ± 1.18 | 35.18 ± 1.96 | 97.73 ± 4.68 | 1581 | 570 | 205 |
+| Round-Robin | 13.11 ± 1.93 | 40.00 ± 3.62 | 107.38 ± 7.65 | 1379 | 503 | 187 |
+
+### Balanced Workload (70:30)
+
+| Strategi | Simple (ms) | Medium (ms) | Complex (ms) | Simple QPS | Medium QPS | Complex QPS |
+|----------|:-----------:|:-----------:|:------------:|:----------:|:----------:|:-----------:|
+| **Latency-Based** | **10.02 ± 0.50** | **30.74 ± 1.20** | **77.67 ± 6.24** | **2000** | **651** | **259** |
+| Load-Based | 11.13 ± 0.54 | 33.63 ± 2.24 | 84.67 ± 4.88 | 1801 | 597 | 237 |
+| Least-Conn | 11.16 ± 0.80 | 33.10 ± 1.77 | 85.54 ± 3.48 | 1799 | 606 | 234 |
+| Weighted-RR | 11.87 ± 0.82 | 35.28 ± 2.15 | 96.35 ± 6.48 | 1691 | 568 | 208 |
+| Round-Robin | 13.26 ± 0.97 | 40.64 ± 2.61 | 108.75 ± 7.09 | 1515 | 494 | 185 |
+
+### Fairness (Gini Coefficient — semakin rendah semakin merata)
+
+| Strategi | Read-Heavy (avg) | Balanced (avg) |
+|----------|:----------------:|:--------------:|
+| **Round-Robin** | **≈ 0.00** | **≈ 0.00** |
+| Load-Based | 0.16 | 0.16 |
+| Least-Conn | 0.18 | 0.16 |
+| Latency-Based | 0.17 | 0.14 |
+| Weighted-RR | 0.29 | 0.29 |
+
+### Temuan Utama
+
+1. **Latency-Based** secara konsisten menunjukkan **latensi terendah** dan **throughput tertinggi** di semua kombinasi eksperimen
+2. **Round-Robin** memiliki **distribusi paling merata** (Gini ≈ 0) tetapi latensi tertinggi karena tidak memperhitungkan kapasitas heterogen replica
+3. **Kruskal-Wallis** menunjukkan perbedaan signifikan antar strategi di semua kondisi (p < 0.05)
+4. **Two-way ANOVA** mengkonfirmasi interaksi signifikan antara Strategy × Complexity (p < 0.001)
+5. **Kompleksitas query** memiliki pengaruh terbesar terhadap latensi (F = 4205.66 untuk read-heavy)
+
+---
+
+## ❓ Troubleshooting
+
+### Docker Container Tidak Bisa Start
+
+```bash
+# Cek status container
+docker compose ps
+
+# Lihat log container yang bermasalah
+docker compose logs pg_primary
+docker compose logs pg_replica1
+
+# Restart seluruh cluster
+docker compose down -v
+docker compose up -d
+```
+
+### Replica Tidak Bisa Konek ke Primary
+
+- Pastikan `pg_hba.conf` mengizinkan koneksi replikasi
+- Pastikan `postgresql.conf` pada primary sudah mengatur `wal_level = replica`
+- Periksa network Docker: semua container harus dalam `pg_network` yang sama
+
+```bash
+# Verifikasi replikasi dari primary
+docker exec pg_primary psql -U postgres -d benchmark \
+  -c "SELECT * FROM pg_stat_replication;"
+```
+
+### Benchmark Gagal dengan Connection Error
+
+```bash
+# Pastikan pool size tidak melebihi max_connections
+docker exec pg_primary psql -U postgres -c "SHOW max_connections;"
+
+# Periksa koneksi aktif
+docker exec pg_primary psql -U postgres \
+  -c "SELECT count(*) FROM pg_stat_activity;"
+```
+
+### Port Konflik
+
+Default port mapping di `docker-compose.yml`:
+
+| Container | Port Host | Port Container |
+|-----------|:---------:|:--------------:|
+| pg_primary | 5439 | 5432 |
+| pg_replica1 | 5440 | 5432 |
+| pg_replica2 | 5441 | 5432 |
+| pg_replica3 | 5442 | 5432 |
+
+Jika port sudah dipakai, ubah di `docker-compose.yml` dan sesuaikan konfigurasi di `router/query_router.py`.
+
+### Benchmark Berjalan Lambat
+
+- Pastikan Docker memiliki cukup resource (CPU & RAM)
+- Gunakan `--quick` untuk smoke test sebelum full benchmark
+- Gunakan `--duration 60 --reps 1` untuk testing cepat
+- Benchmark mendukung **resume** — jika terputus, jalankan ulang dan run yang sudah selesai akan di-skip otomatis
+
+### Module Import Error
+
+```bash
+# Pastikan menjalankan dari root directory proyek
+# Jalankan dengan -m flag
+python -m benchmark.run_all    # ✅ Benar
+python benchmark/run_all.py     # ❌ Bisa error import
+```
+
+---
+
+## 👤 Author
+
+**Mahathir Muhammad**  
+Program Studi S2 — Tesis  
+Mata Kuliah: Komputasi Berbasis Jaringan dan Fungsi Perangkat Lunak
 
 ---
 
