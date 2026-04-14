@@ -282,6 +282,81 @@ python -m analysis.report_tables
 
 ---
 
+## 📅 Fase Pengerjaan
+
+Proyek ini dikembangkan dalam **4 fase** sesuai timeline yang ditetapkan:
+
+### Fase 1 — Setup Infrastruktur Cluster PostgreSQL ✅
+> **Pekan 1** | Setup PG cluster + replication + data
+
+| Deliverable | Deskripsi |
+|-------------|-----------|
+| `docker-compose.yml` | Cluster 4 node PostgreSQL 16 (1 primary + 3 replica heterogen) |
+| `docker/primary/postgresql.conf` | Konfigurasi WAL + streaming replication |
+| `docker/primary/pg_hba.conf` | Aturan autentikasi untuk replikasi dan client |
+| `docker/primary/init.sql` | Schema database `benchmark` + seed 500K rows (`orders`, `customers`, `products`) |
+| `docker/primary/setup_replication.sh` | Script pembuatan replication slot otomatis |
+| `docker/replica/entrypoint.sh` | Entrypoint replica: `pg_basebackup` + standby config (dengan `gosu` untuk keamanan) |
+| `verify_cluster.py` | Script verifikasi: konektivitas, replikasi, konsistensi data, read-only check |
+
+**Keputusan desain:**
+- Replica heterogen dengan resource limit berbeda (2.0 / 1.0 / 0.5 CPU) untuk simulasi lingkungan nyata
+- Seed data menggunakan `setseed(0.42)` agar dataset tetap konsisten di setiap pengujian
+- Port primary di-remap ke `5439` untuk menghindari konflik dengan PostgreSQL lokal
+
+---
+
+### Fase 2 — Custom Query Router Proxy ✅
+> **Pekan 2** | Implementasi Router + 5 strategi routing
+
+| Deliverable | Deskripsi |
+|-------------|-----------|
+| `router/strategies.py` | 5 strategi routing pluggable (ABC + strategy registry pattern) |
+| `router/health_checker.py` | Background health check async (EMA α=0.3, interval 5s) |
+| `router/metrics.py` | Kolektor 7 metrik benchmark + export JSON/CSV |
+| `router/query_router.py` | Main proxy: klasifikasi R/W via regex, connection pooling, routing |
+| `test_router.py` | Smoke test: validasi semua 5 strategi (simple/medium/complex read + write) |
+
+**Keputusan desain:**
+- Weighted Round-Robin menggunakan algoritma Nginx-style smooth weighting untuk distribusi merata
+- EMA latency di-update baik oleh health checker (background) maupun per-query execution (real-time)
+- Query classifier menggunakan regex pattern matching (`SELECT`, `SHOW`, `EXPLAIN`, `WITH...SELECT`)
+
+---
+
+### Fase 3 — Benchmark Runner + Integrasi ✅
+> **Pekan 3** | Engine benchmark + orkestrator eksperimen
+
+| Deliverable | Deskripsi |
+|-------------|-----------|
+| `benchmark/queries.py` | Template query 3 level kompleksitas (PK lookup → JOIN 2 → JOIN 3 + aggregasi) |
+| `benchmark/workload.py` | Profil workload: Read-Heavy (95:5) dan Balanced (70:30) |
+| `benchmark/runner.py` | Engine: 50 concurrent clients, warm-up 1000 queries, durasi 10 menit |
+| `benchmark/run_all.py` | Orkestrator: 30 kombinasi × 5 repetisi, auto-resume, CLI args, `--quick` mode |
+
+**Keputusan desain:**
+- Setiap worker menggunakan seed unik (`base_seed + worker_id`) untuk menghindari query identik antar client
+- Fitur **auto-resume**: run yang sudah selesai disimpan sebagai `.json` dan di-skip saat re-run
+- Prioritas eksekusi: Read-Heavy workload dijalankan terlebih dahulu
+
+---
+
+### Fase 4 — Analisis Statistik + Visualisasi ✅
+> **Pekan 4** | Eksekusi benchmark + analisis + report
+
+| Deliverable | Deskripsi |
+|-------------|-----------|
+| `analysis/stats_analysis.py` | Kruskal-Wallis H-test, Dunn's post-hoc (Holm), Two-way ANOVA, Gini coefficient |
+| `analysis/visualize.py` | Bar chart, scatter trade-off, stacked bar distribusi load |
+| `analysis/report_tables.py` | Generator tabel `Mean ± Std` untuk laporan akademis |
+
+**Keputusan desain:**
+- File `statistics.py` di-rename menjadi `stats_analysis.py` untuk menghindari konflik dengan modul bawaan Python
+- Dunn's post-hoc menggunakan koreksi Holm untuk multiple comparison
+- Visualisasi menggunakan DPI 300 untuk kualitas cetak/publikasi
+
+---
+
 ## 🧪 Skenario Eksperimen
 
 ### Variabel Independen
@@ -368,7 +443,13 @@ python -m analysis.report_tables
 
 ## 📊 Hasil Benchmark
 
-Berikut adalah ringkasan hasil benchmark dari eksperimen yang telah dilakukan (rata-rata ± std dev dari 5 repetisi):
+> [!WARNING]
+> **CATATAN PENTING UNTUK AUTHOR:**
+> Angka dan tabel di bawah ini saat ini masih menggunakan **data validasi / *smoke-test* sampel**. Pastikan Anda meng-*update* isi tabel ini secara manual menggunakan angka dari file `analysis_output/report_summary_table.csv` **setelah benchmark 25-jam Anda benar-benar selesai**!
+>
+> *(Selain tabel, semua visualisasi grafis berbentuk `.png` juga akan di-generate secara otomatis ke dalam folder `analysis_output/` dan siap Anda copy-paste ke naskah laporan Anda).*
+
+Berikut adalah ringkasan hasil benchmark eksperimen (rata-rata ± std dev dari repetisi):
 
 ### Read-Heavy Workload (95:5)
 
