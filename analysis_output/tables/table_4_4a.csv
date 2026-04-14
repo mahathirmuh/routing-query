@@ -1,0 +1,7 @@
+Metrik,RoundRobin,Load-Based,Latency-Based,Weighted-RR,Least-Conn
+Read Avg (ms),9.50,9.47,8.91,9.47,11.27
+Read P95 (ms),16.41,15.67,15.12,14.39,22.87
+Throughput (qps),1018.13,1026.64,1085.90,1019.33,836.87
+Load CV,0.46,0.93,0.90,0.74,0.87
+Staleness (%),0.00,0.00,0.00,0.00,0.00
+Router Overhead (ms),0.01,0.01,0.01,0.03,0.01

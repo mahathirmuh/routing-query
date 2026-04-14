@@ -1,0 +1,785 @@
+2026-04-09 13:57:00,164 [INFO] ======================================================================
+2026-04-09 13:57:00,165 [INFO]   BENCHMARK ORCHESTRATOR
+2026-04-09 13:57:00,165 [INFO]   Strategies:    ['round_robin', 'load_based', 'latency_based', 'weighted_rr', 'least_conn']
+2026-04-09 13:57:00,165 [INFO]   Complexities:  ['simple', 'medium', 'complex']
+2026-04-09 13:57:00,165 [INFO]   Workloads:     ['read_heavy', 'balanced']
+2026-04-09 13:57:00,165 [INFO]   Repetitions:   5
+2026-04-09 13:57:00,165 [INFO]   Duration/run:  600s
+2026-04-09 13:57:00,165 [INFO]   Concurrency:   50
+2026-04-09 13:57:00,165 [INFO]   Total runs:    150
+2026-04-09 13:57:00,166 [INFO]   Completed:     15
+2026-04-09 13:57:00,167 [INFO]   Remaining:     135
+2026-04-09 13:57:00,167 [INFO]   Est. time:     23.6 hours
+2026-04-09 13:57:00,167 [INFO] ======================================================================
+2026-04-09 13:57:00,168 [INFO] [1/150] SKIP (done): round_robin__simple__read_heavy__rep1
+2026-04-09 13:57:00,168 [INFO] [2/150] SKIP (done): round_robin__simple__read_heavy__rep2
+2026-04-09 13:57:00,168 [INFO] [3/150] SKIP (done): round_robin__simple__read_heavy__rep3
+2026-04-09 13:57:00,168 [INFO] [4/150] SKIP (done): round_robin__simple__read_heavy__rep4
+2026-04-09 13:57:00,169 [INFO] [5/150] SKIP (done): round_robin__simple__read_heavy__rep5
+2026-04-09 13:57:00,169 [INFO] [6/150] SKIP (done): load_based__simple__read_heavy__rep1
+2026-04-09 13:57:00,169 [INFO] [7/150] SKIP (done): load_based__simple__read_heavy__rep2
+2026-04-09 13:57:00,169 [INFO] [8/150] SKIP (done): load_based__simple__read_heavy__rep3
+2026-04-09 13:57:00,169 [INFO] [9/150] SKIP (done): load_based__simple__read_heavy__rep4
+2026-04-09 13:57:00,169 [INFO] [10/150] SKIP (done): load_based__simple__read_heavy__rep5
+2026-04-09 13:57:00,169 [INFO] [11/150] SKIP (done): latency_based__simple__read_heavy__rep1
+2026-04-09 13:57:00,171 [INFO] [12/150] SKIP (done): latency_based__simple__read_heavy__rep2
+2026-04-09 13:57:00,171 [INFO] [13/150] SKIP (done): latency_based__simple__read_heavy__rep3
+2026-04-09 13:57:00,171 [INFO] 
+======================================================================
+2026-04-09 13:57:00,171 [INFO] [14/150] RUN: latency_based__simple__read_heavy__rep4
+2026-04-09 13:57:00,172 [INFO]   Strategy=latency_based, Complexity=simple, Workload=Read-Heavy (95:5), Rep=4, Seed=442
+2026-04-09 13:57:00,173 [INFO] ======================================================================
+2026-04-09 13:57:00,173 [INFO] [latency_based|simple|read_heavy] Starting benchmark run
+2026-04-09 13:57:00,173 [INFO] [latency_based|simple|read_heavy] Duration=600s, Concurrency=50, Warmup=1000, Seed=442
+2026-04-09 13:57:00,173 [INFO] Starting QueryRouter [strategy=Latency-Based]
+2026-04-09 13:57:00,284 [INFO] Primary pool created (localhost:5439)
+2026-04-09 13:57:00,389 [INFO] Replica pool created: replica1 (localhost:5440)
+2026-04-09 13:57:00,512 [INFO] Replica pool created: replica2 (localhost:5441)
+2026-04-09 13:57:00,636 [INFO] Replica pool created: replica3 (localhost:5442)
+2026-04-09 13:57:00,709 [INFO] Health probe pool created for replica1
+2026-04-09 13:57:00,767 [INFO] Health probe pool created for replica2
+2026-04-09 13:57:00,814 [INFO] Health probe pool created for replica3
+2026-04-09 13:57:00,816 [INFO] Health checker started (interval=5.0s, EMA alpha=0.3)
+2026-04-09 13:57:00,944 [INFO] QueryRouter ready
+2026-04-09 13:57:00,949 [INFO] [latency_based|simple|read_heavy] Warm-up: 1000 queries...
+2026-04-09 13:57:04,169 [INFO] [latency_based|simple|read_heavy] Warm-up complete
+2026-04-09 13:57:04,170 [INFO] [latency_based|simple|read_heavy] Benchmark starting (600s)...
+2026-04-09 13:58:04,180 [INFO] [latency_based|simple|read_heavy] Progress: 60/600s (10%) — 70860 queries, 0 errors
+2026-04-09 13:59:04,178 [INFO] [latency_based|simple|read_heavy] Progress: 120/600s (20%) — 148122 queries, 0 errors
+2026-04-09 14:00:04,179 [INFO] [latency_based|simple|read_heavy] Progress: 180/600s (30%) — 208729 queries, 0 errors
+2026-04-09 14:01:04,180 [INFO] [latency_based|simple|read_heavy] Progress: 240/600s (40%) — 281109 queries, 0 errors
+2026-04-09 14:02:04,178 [INFO] [latency_based|simple|read_heavy] Progress: 300/600s (50%) — 357452 queries, 0 errors
+2026-04-09 14:03:04,180 [INFO] [latency_based|simple|read_heavy] Progress: 360/600s (60%) — 438050 queries, 0 errors
+2026-04-09 14:04:04,183 [INFO] [latency_based|simple|read_heavy] Progress: 420/600s (70%) — 520136 queries, 0 errors
+2026-04-09 14:05:04,180 [INFO] [latency_based|simple|read_heavy] Progress: 480/600s (80%) — 605996 queries, 0 errors
+2026-04-09 14:06:04,180 [INFO] [latency_based|simple|read_heavy] Progress: 540/600s (90%) — 689841 queries, 0 errors
+2026-04-09 14:07:04,180 [INFO] [latency_based|simple|read_heavy] Progress: 600/600s (100%) — 771944 queries, 0 errors
+2026-04-09 14:07:05,087 [INFO] [latency_based|simple|read_heavy] Benchmark complete: 771994 queries, 1286.6 qps, read_avg=39.51ms, errors=0
+2026-04-09 14:07:05,088 [INFO] Stopping QueryRouter...
+2026-04-09 14:07:05,102 [INFO] Health checker stopped
+2026-04-09 14:07:05,420 [INFO] QueryRouter stopped
+2026-04-09 14:07:05,558 [INFO] [14/150] DONE in 605.4s: qps=1286.6, read_avg=39.51ms
+2026-04-09 14:07:08,561 [INFO] 
+======================================================================
+2026-04-09 14:07:08,565 [INFO] [15/150] RUN: latency_based__simple__read_heavy__rep5
+2026-04-09 14:07:08,565 [INFO]   Strategy=latency_based, Complexity=simple, Workload=Read-Heavy (95:5), Rep=5, Seed=542
+2026-04-09 14:07:08,566 [INFO] ======================================================================
+2026-04-09 14:07:08,566 [INFO] [latency_based|simple|read_heavy] Starting benchmark run
+2026-04-09 14:07:08,566 [INFO] [latency_based|simple|read_heavy] Duration=600s, Concurrency=50, Warmup=1000, Seed=542
+2026-04-09 14:07:08,567 [INFO] Starting QueryRouter [strategy=Latency-Based]
+2026-04-09 14:07:08,648 [INFO] Primary pool created (localhost:5439)
+2026-04-09 14:07:08,750 [INFO] Replica pool created: replica1 (localhost:5440)
+2026-04-09 14:07:08,851 [INFO] Replica pool created: replica2 (localhost:5441)
+2026-04-09 14:07:08,958 [INFO] Replica pool created: replica3 (localhost:5442)
+2026-04-09 14:07:09,004 [INFO] Health probe pool created for replica1
+2026-04-09 14:07:09,050 [INFO] Health probe pool created for replica2
+2026-04-09 14:07:09,100 [INFO] Health probe pool created for replica3
+2026-04-09 14:07:09,101 [INFO] Health checker started (interval=5.0s, EMA alpha=0.3)
+2026-04-09 14:07:09,235 [INFO] QueryRouter ready
+2026-04-09 14:07:09,239 [INFO] [latency_based|simple|read_heavy] Warm-up: 1000 queries...
+2026-04-09 14:07:12,302 [INFO] [latency_based|simple|read_heavy] Warm-up complete
+2026-04-09 14:07:12,304 [INFO] [latency_based|simple|read_heavy] Benchmark starting (600s)...
+2026-04-09 14:08:12,306 [INFO] [latency_based|simple|read_heavy] Progress: 60/600s (10%) — 77373 queries, 0 errors
+2026-04-09 14:09:12,306 [INFO] [latency_based|simple|read_heavy] Progress: 120/600s (20%) — 159825 queries, 0 errors
+2026-04-09 14:10:12,305 [INFO] [latency_based|simple|read_heavy] Progress: 180/600s (30%) — 239110 queries, 0 errors
+2026-04-09 14:11:12,309 [INFO] [latency_based|simple|read_heavy] Progress: 240/600s (40%) — 303073 queries, 0 errors
+2026-04-09 14:12:12,337 [INFO] [latency_based|simple|read_heavy] Progress: 300/600s (50%) — 380683 queries, 0 errors
+2026-04-09 14:13:12,337 [INFO] [latency_based|simple|read_heavy] Progress: 360/600s (60%) — 448103 queries, 0 errors
+2026-04-09 14:14:12,339 [INFO] [latency_based|simple|read_heavy] Progress: 420/600s (70%) — 516577 queries, 0 errors
+2026-04-09 14:15:12,334 [INFO] [latency_based|simple|read_heavy] Progress: 480/600s (80%) — 586950 queries, 0 errors
+2026-04-09 14:16:12,334 [INFO] [latency_based|simple|read_heavy] Progress: 540/600s (90%) — 651451 queries, 0 errors
+2026-04-09 14:17:12,332 [INFO] [latency_based|simple|read_heavy] Progress: 600/600s (100%) — 720353 queries, 0 errors
+2026-04-09 14:17:13,882 [INFO] [latency_based|simple|read_heavy] Benchmark complete: 720403 queries, 1200.5 qps, read_avg=42.04ms, errors=0
+2026-04-09 14:17:13,886 [INFO] Stopping QueryRouter...
+2026-04-09 14:17:13,909 [INFO] Health checker stopped
+2026-04-09 14:17:14,171 [INFO] QueryRouter stopped
+2026-04-09 14:17:14,380 [INFO] [15/150] DONE in 605.8s: qps=1200.5, read_avg=42.04ms
+2026-04-09 14:17:17,389 [INFO] [16/150] SKIP (done): weighted_rr__simple__read_heavy__rep1
+2026-04-09 14:17:17,393 [INFO] 
+======================================================================
+2026-04-09 14:17:17,395 [INFO] [17/150] RUN: weighted_rr__simple__read_heavy__rep2
+2026-04-09 14:17:17,395 [INFO]   Strategy=weighted_rr, Complexity=simple, Workload=Read-Heavy (95:5), Rep=2, Seed=242
+2026-04-09 14:17:17,396 [INFO] ======================================================================
+2026-04-09 14:17:17,396 [INFO] [weighted_rr|simple|read_heavy] Starting benchmark run
+2026-04-09 14:17:17,396 [INFO] [weighted_rr|simple|read_heavy] Duration=600s, Concurrency=50, Warmup=1000, Seed=242
+2026-04-09 14:17:17,398 [INFO] Starting QueryRouter [strategy=Weighted-RR]
+2026-04-09 14:17:17,583 [INFO] Primary pool created (localhost:5439)
+2026-04-09 14:17:17,777 [INFO] Replica pool created: replica1 (localhost:5440)
+2026-04-09 14:17:17,998 [INFO] Replica pool created: replica2 (localhost:5441)
+2026-04-09 14:17:18,164 [INFO] Replica pool created: replica3 (localhost:5442)
+2026-04-09 14:17:18,247 [INFO] Health probe pool created for replica1
+2026-04-09 14:17:18,320 [INFO] Health probe pool created for replica2
+2026-04-09 14:17:18,402 [INFO] Health probe pool created for replica3
+2026-04-09 14:17:18,407 [INFO] Health checker started (interval=5.0s, EMA alpha=0.3)
+2026-04-09 14:17:18,658 [INFO] QueryRouter ready
+2026-04-09 14:17:18,659 [INFO] [weighted_rr|simple|read_heavy] Warm-up: 1000 queries...
+2026-04-09 14:17:22,291 [INFO] [weighted_rr|simple|read_heavy] Warm-up complete
+2026-04-09 14:17:22,292 [INFO] [weighted_rr|simple|read_heavy] Benchmark starting (600s)...
+2026-04-09 14:18:22,317 [INFO] [weighted_rr|simple|read_heavy] Progress: 60/600s (10%) — 63541 queries, 0 errors
+2026-04-09 14:19:22,315 [INFO] [weighted_rr|simple|read_heavy] Progress: 120/600s (20%) — 135952 queries, 0 errors
+2026-04-09 14:20:22,314 [INFO] [weighted_rr|simple|read_heavy] Progress: 180/600s (30%) — 201236 queries, 0 errors
+2026-04-09 14:21:22,327 [INFO] [weighted_rr|simple|read_heavy] Progress: 240/600s (40%) — 264578 queries, 0 errors
+2026-04-09 14:22:22,330 [INFO] [weighted_rr|simple|read_heavy] Progress: 300/600s (50%) — 325999 queries, 0 errors
+2026-04-09 14:23:22,320 [INFO] [weighted_rr|simple|read_heavy] Progress: 360/600s (60%) — 400688 queries, 0 errors
+2026-04-09 14:24:22,311 [INFO] [weighted_rr|simple|read_heavy] Progress: 420/600s (70%) — 477755 queries, 0 errors
+2026-04-09 14:25:22,313 [INFO] [weighted_rr|simple|read_heavy] Progress: 480/600s (80%) — 553435 queries, 0 errors
+2026-04-09 14:26:22,312 [INFO] [weighted_rr|simple|read_heavy] Progress: 540/600s (90%) — 628931 queries, 0 errors
+2026-04-09 14:27:22,315 [INFO] [weighted_rr|simple|read_heavy] Progress: 600/600s (100%) — 704535 queries, 0 errors
+2026-04-09 14:27:23,787 [INFO] [weighted_rr|simple|read_heavy] Benchmark complete: 704593 queries, 1174.2 qps, read_avg=42.38ms, errors=0
+2026-04-09 14:27:23,789 [INFO] Stopping QueryRouter...
+2026-04-09 14:27:23,809 [INFO] Health checker stopped
+2026-04-09 14:27:24,120 [INFO] QueryRouter stopped
+2026-04-09 14:27:24,311 [INFO] [17/150] DONE in 606.9s: qps=1174.2, read_avg=42.38ms
+2026-04-09 14:27:27,318 [INFO] 
+======================================================================
+2026-04-09 14:27:27,323 [INFO] [18/150] RUN: weighted_rr__simple__read_heavy__rep3
+2026-04-09 14:27:27,324 [INFO]   Strategy=weighted_rr, Complexity=simple, Workload=Read-Heavy (95:5), Rep=3, Seed=342
+2026-04-09 14:27:27,325 [INFO] ======================================================================
+2026-04-09 14:27:27,326 [INFO] [weighted_rr|simple|read_heavy] Starting benchmark run
+2026-04-09 14:27:27,327 [INFO] [weighted_rr|simple|read_heavy] Duration=600s, Concurrency=50, Warmup=1000, Seed=342
+2026-04-09 14:27:27,328 [INFO] Starting QueryRouter [strategy=Weighted-RR]
+2026-04-09 14:27:27,524 [INFO] Primary pool created (localhost:5439)
+2026-04-09 14:27:27,713 [INFO] Replica pool created: replica1 (localhost:5440)
+2026-04-09 14:27:27,902 [INFO] Replica pool created: replica2 (localhost:5441)
+2026-04-09 14:27:28,103 [INFO] Replica pool created: replica3 (localhost:5442)
+2026-04-09 14:27:28,208 [INFO] Health probe pool created for replica1
+2026-04-09 14:27:28,315 [INFO] Health probe pool created for replica2
+2026-04-09 14:27:28,412 [INFO] Health probe pool created for replica3
+2026-04-09 14:27:28,415 [INFO] Health checker started (interval=5.0s, EMA alpha=0.3)
+2026-04-09 14:27:28,694 [INFO] QueryRouter ready
+2026-04-09 14:27:28,694 [INFO] [weighted_rr|simple|read_heavy] Warm-up: 1000 queries...
+2026-04-09 14:27:32,669 [INFO] [weighted_rr|simple|read_heavy] Warm-up complete
+2026-04-09 14:27:32,670 [INFO] [weighted_rr|simple|read_heavy] Benchmark starting (600s)...
+2026-04-09 14:28:32,684 [INFO] [weighted_rr|simple|read_heavy] Progress: 60/600s (10%) — 77529 queries, 0 errors
+2026-04-09 14:29:32,687 [INFO] [weighted_rr|simple|read_heavy] Progress: 120/600s (20%) — 153791 queries, 0 errors
+2026-04-09 14:30:32,690 [INFO] [weighted_rr|simple|read_heavy] Progress: 180/600s (30%) — 218083 queries, 0 errors
+2026-04-09 14:31:32,715 [INFO] [weighted_rr|simple|read_heavy] Progress: 240/600s (40%) — 253499 queries, 0 errors
+2026-04-09 14:32:32,757 [INFO] [weighted_rr|simple|read_heavy] Progress: 300/600s (50%) — 311919 queries, 0 errors
+2026-04-09 14:33:32,768 [INFO] [weighted_rr|simple|read_heavy] Progress: 360/600s (60%) — 381705 queries, 0 errors
+2026-04-09 14:34:32,766 [INFO] [weighted_rr|simple|read_heavy] Progress: 420/600s (70%) — 454235 queries, 0 errors
+2026-04-09 14:35:32,768 [INFO] [weighted_rr|simple|read_heavy] Progress: 480/600s (80%) — 511755 queries, 0 errors
+2026-04-09 14:36:32,770 [INFO] [weighted_rr|simple|read_heavy] Progress: 540/600s (90%) — 571772 queries, 0 errors
+2026-04-09 14:37:32,769 [INFO] [weighted_rr|simple|read_heavy] Progress: 600/600s (100%) — 628799 queries, 0 errors
+2026-04-09 14:37:34,611 [INFO] [weighted_rr|simple|read_heavy] Benchmark complete: 628852 queries, 1047.9 qps, read_avg=47.20ms, errors=0
+2026-04-09 14:37:34,616 [INFO] Stopping QueryRouter...
+2026-04-09 14:37:34,643 [INFO] Health checker stopped
+2026-04-09 14:37:35,058 [INFO] QueryRouter stopped
+2026-04-09 14:37:35,358 [INFO] [18/150] DONE in 608.0s: qps=1047.9, read_avg=47.20ms
+2026-04-09 14:37:38,367 [INFO] 
+======================================================================
+2026-04-09 14:37:38,369 [INFO] [19/150] RUN: weighted_rr__simple__read_heavy__rep4
+2026-04-09 14:37:38,370 [INFO]   Strategy=weighted_rr, Complexity=simple, Workload=Read-Heavy (95:5), Rep=4, Seed=442
+2026-04-09 14:37:38,370 [INFO] ======================================================================
+2026-04-09 14:37:38,371 [INFO] [weighted_rr|simple|read_heavy] Starting benchmark run
+2026-04-09 14:37:38,371 [INFO] [weighted_rr|simple|read_heavy] Duration=600s, Concurrency=50, Warmup=1000, Seed=442
+2026-04-09 14:37:38,372 [INFO] Starting QueryRouter [strategy=Weighted-RR]
+2026-04-09 14:37:38,538 [INFO] Primary pool created (localhost:5439)
+2026-04-09 14:37:38,753 [INFO] Replica pool created: replica1 (localhost:5440)
+2026-04-09 14:37:38,940 [INFO] Replica pool created: replica2 (localhost:5441)
+2026-04-09 14:37:39,117 [INFO] Replica pool created: replica3 (localhost:5442)
+2026-04-09 14:37:39,213 [INFO] Health probe pool created for replica1
+2026-04-09 14:37:39,295 [INFO] Health probe pool created for replica2
+2026-04-09 14:37:39,380 [INFO] Health probe pool created for replica3
+2026-04-09 14:37:39,381 [INFO] Health checker started (interval=5.0s, EMA alpha=0.3)
+2026-04-09 14:37:39,644 [INFO] QueryRouter ready
+2026-04-09 14:37:39,645 [INFO] [weighted_rr|simple|read_heavy] Warm-up: 1000 queries...
+2026-04-09 14:37:43,441 [INFO] [weighted_rr|simple|read_heavy] Warm-up complete
+2026-04-09 14:37:43,443 [INFO] [weighted_rr|simple|read_heavy] Benchmark starting (600s)...
+2026-04-09 14:38:43,468 [INFO] [weighted_rr|simple|read_heavy] Progress: 60/600s (10%) — 56522 queries, 0 errors
+2026-04-09 14:39:43,473 [INFO] [weighted_rr|simple|read_heavy] Progress: 120/600s (20%) — 110801 queries, 0 errors
+2026-04-09 14:40:43,468 [INFO] [weighted_rr|simple|read_heavy] Progress: 180/600s (30%) — 171756 queries, 0 errors
+2026-04-09 14:41:43,469 [INFO] [weighted_rr|simple|read_heavy] Progress: 240/600s (40%) — 224898 queries, 0 errors
+2026-04-09 14:42:43,468 [INFO] [weighted_rr|simple|read_heavy] Progress: 300/600s (50%) — 280999 queries, 0 errors
+2026-04-09 14:43:43,474 [INFO] [weighted_rr|simple|read_heavy] Progress: 360/600s (60%) — 343762 queries, 0 errors
+2026-04-09 14:44:43,472 [INFO] [weighted_rr|simple|read_heavy] Progress: 420/600s (70%) — 407913 queries, 0 errors
+2026-04-09 14:45:43,553 [INFO] [weighted_rr|simple|read_heavy] Progress: 480/600s (80%) — 470936 queries, 0 errors
+2026-04-09 14:46:43,562 [INFO] [weighted_rr|simple|read_heavy] Progress: 540/600s (90%) — 523078 queries, 0 errors
+2026-04-09 14:47:43,568 [INFO] [weighted_rr|simple|read_heavy] Progress: 600/600s (100%) — 572838 queries, 0 errors
+2026-04-09 14:47:45,211 [INFO] [weighted_rr|simple|read_heavy] Benchmark complete: 572891 queries, 954.5 qps, read_avg=52.35ms, errors=0
+2026-04-09 14:47:45,213 [INFO] Stopping QueryRouter...
+2026-04-09 14:47:45,235 [INFO] Health checker stopped
+2026-04-09 14:47:45,707 [INFO] QueryRouter stopped
+2026-04-09 14:47:45,992 [INFO] [19/150] DONE in 607.6s: qps=954.5, read_avg=52.35ms
+2026-04-09 14:47:49,002 [INFO] 
+======================================================================
+2026-04-09 14:47:49,004 [INFO] [20/150] RUN: weighted_rr__simple__read_heavy__rep5
+2026-04-09 14:47:49,005 [INFO]   Strategy=weighted_rr, Complexity=simple, Workload=Read-Heavy (95:5), Rep=5, Seed=542
+2026-04-09 14:47:49,005 [INFO] ======================================================================
+2026-04-09 14:47:49,006 [INFO] [weighted_rr|simple|read_heavy] Starting benchmark run
+2026-04-09 14:47:49,007 [INFO] [weighted_rr|simple|read_heavy] Duration=600s, Concurrency=50, Warmup=1000, Seed=542
+2026-04-09 14:47:49,008 [INFO] Starting QueryRouter [strategy=Weighted-RR]
+2026-04-09 14:47:49,195 [INFO] Primary pool created (localhost:5439)
+2026-04-09 14:47:49,377 [INFO] Replica pool created: replica1 (localhost:5440)
+2026-04-09 14:47:49,547 [INFO] Replica pool created: replica2 (localhost:5441)
+2026-04-09 14:47:49,719 [INFO] Replica pool created: replica3 (localhost:5442)
+2026-04-09 14:47:49,812 [INFO] Health probe pool created for replica1
+2026-04-09 14:47:50,118 [INFO] Health probe pool created for replica2
+2026-04-09 14:47:50,325 [INFO] Health probe pool created for replica3
+2026-04-09 14:47:50,430 [INFO] Health checker started (interval=5.0s, EMA alpha=0.3)
+2026-04-09 14:47:50,774 [INFO] QueryRouter ready
+2026-04-09 14:47:50,782 [INFO] [weighted_rr|simple|read_heavy] Warm-up: 1000 queries...
+2026-04-09 14:47:55,200 [INFO] [weighted_rr|simple|read_heavy] Warm-up complete
+2026-04-09 14:47:55,202 [INFO] [weighted_rr|simple|read_heavy] Benchmark starting (600s)...
+2026-04-09 14:48:55,223 [INFO] [weighted_rr|simple|read_heavy] Progress: 60/600s (10%) — 52677 queries, 0 errors
+2026-04-09 14:49:55,216 [INFO] [weighted_rr|simple|read_heavy] Progress: 120/600s (20%) — 108919 queries, 0 errors
+2026-04-09 14:50:55,220 [INFO] [weighted_rr|simple|read_heavy] Progress: 180/600s (30%) — 161667 queries, 0 errors
+2026-04-09 14:51:55,214 [INFO] [weighted_rr|simple|read_heavy] Progress: 240/600s (40%) — 214244 queries, 0 errors
+2026-04-09 14:52:55,220 [INFO] [weighted_rr|simple|read_heavy] Progress: 300/600s (50%) — 271727 queries, 0 errors
+2026-04-09 14:53:55,219 [INFO] [weighted_rr|simple|read_heavy] Progress: 360/600s (60%) — 326429 queries, 0 errors
+2026-04-09 14:54:55,222 [INFO] [weighted_rr|simple|read_heavy] Progress: 420/600s (70%) — 378117 queries, 0 errors
+2026-04-09 14:55:55,222 [INFO] [weighted_rr|simple|read_heavy] Progress: 480/600s (80%) — 438830 queries, 0 errors
+2026-04-09 14:56:55,235 [INFO] [weighted_rr|simple|read_heavy] Progress: 540/600s (90%) — 494549 queries, 0 errors
+2026-04-09 14:57:55,218 [INFO] [weighted_rr|simple|read_heavy] Progress: 600/600s (100%) — 554252 queries, 0 errors
+2026-04-09 14:57:56,823 [INFO] [weighted_rr|simple|read_heavy] Benchmark complete: 554310 queries, 923.7 qps, read_avg=54.06ms, errors=0
+2026-04-09 14:57:56,827 [INFO] Stopping QueryRouter...
+2026-04-09 14:57:56,885 [INFO] Health checker stopped
+2026-04-09 14:57:57,265 [INFO] QueryRouter stopped
+2026-04-09 14:57:57,527 [INFO] [20/150] DONE in 608.5s: qps=923.7, read_avg=54.06ms
+2026-04-09 14:58:00,537 [INFO] [21/150] SKIP (done): least_conn__simple__read_heavy__rep1
+2026-04-09 14:58:00,542 [INFO] 
+======================================================================
+2026-04-09 14:58:00,544 [INFO] [22/150] RUN: least_conn__simple__read_heavy__rep2
+2026-04-09 14:58:00,544 [INFO]   Strategy=least_conn, Complexity=simple, Workload=Read-Heavy (95:5), Rep=2, Seed=242
+2026-04-09 14:58:00,545 [INFO] ======================================================================
+2026-04-09 14:58:00,546 [INFO] [least_conn|simple|read_heavy] Starting benchmark run
+2026-04-09 14:58:00,546 [INFO] [least_conn|simple|read_heavy] Duration=600s, Concurrency=50, Warmup=1000, Seed=242
+2026-04-09 14:58:00,546 [INFO] Starting QueryRouter [strategy=Least-Conn]
+2026-04-09 14:58:00,712 [INFO] Primary pool created (localhost:5439)
+2026-04-09 14:58:00,961 [INFO] Replica pool created: replica1 (localhost:5440)
+2026-04-09 14:58:01,185 [INFO] Replica pool created: replica2 (localhost:5441)
+2026-04-09 14:58:01,396 [INFO] Replica pool created: replica3 (localhost:5442)
+2026-04-09 14:58:01,498 [INFO] Health probe pool created for replica1
+2026-04-09 14:58:01,613 [INFO] Health probe pool created for replica2
+2026-04-09 14:58:01,714 [INFO] Health probe pool created for replica3
+2026-04-09 14:58:01,719 [INFO] Health checker started (interval=5.0s, EMA alpha=0.3)
+2026-04-09 14:58:02,012 [INFO] QueryRouter ready
+2026-04-09 14:58:02,014 [INFO] [least_conn|simple|read_heavy] Warm-up: 1000 queries...
+2026-04-09 14:58:04,605 [INFO] [least_conn|simple|read_heavy] Warm-up complete
+2026-04-09 14:58:04,607 [INFO] [least_conn|simple|read_heavy] Benchmark starting (600s)...
+2026-04-09 14:59:04,626 [INFO] [least_conn|simple|read_heavy] Progress: 60/600s (10%) — 66126 queries, 0 errors
+2026-04-09 15:00:04,636 [INFO] [least_conn|simple|read_heavy] Progress: 120/600s (20%) — 130868 queries, 0 errors
+2026-04-09 15:01:04,638 [INFO] [least_conn|simple|read_heavy] Progress: 180/600s (30%) — 197571 queries, 0 errors
+2026-04-09 15:02:04,637 [INFO] [least_conn|simple|read_heavy] Progress: 240/600s (40%) — 257658 queries, 0 errors
+2026-04-09 15:03:04,636 [INFO] [least_conn|simple|read_heavy] Progress: 300/600s (50%) — 322202 queries, 0 errors
+2026-04-09 15:04:04,641 [INFO] [least_conn|simple|read_heavy] Progress: 360/600s (60%) — 389041 queries, 0 errors
+2026-04-09 15:05:04,637 [INFO] [least_conn|simple|read_heavy] Progress: 420/600s (70%) — 456726 queries, 0 errors
+2026-04-09 15:06:04,639 [INFO] [least_conn|simple|read_heavy] Progress: 480/600s (80%) — 522228 queries, 0 errors
+2026-04-09 15:07:04,635 [INFO] [least_conn|simple|read_heavy] Progress: 540/600s (90%) — 582328 queries, 0 errors
+2026-04-09 15:08:04,642 [INFO] [least_conn|simple|read_heavy] Progress: 600/600s (100%) — 645500 queries, 0 errors
+2026-04-09 15:08:06,521 [INFO] [least_conn|simple|read_heavy] Benchmark complete: 645552 queries, 1075.8 qps, read_avg=47.34ms, errors=0
+2026-04-09 15:08:06,527 [INFO] Stopping QueryRouter...
+2026-04-09 15:08:06,573 [INFO] Health checker stopped
+2026-04-09 15:08:06,725 [INFO] QueryRouter stopped
+2026-04-09 15:08:07,017 [INFO] [22/150] DONE in 606.5s: qps=1075.8, read_avg=47.34ms
+2026-04-09 15:08:10,034 [INFO] 
+======================================================================
+2026-04-09 15:08:10,038 [INFO] [23/150] RUN: least_conn__simple__read_heavy__rep3
+2026-04-09 15:08:10,041 [INFO]   Strategy=least_conn, Complexity=simple, Workload=Read-Heavy (95:5), Rep=3, Seed=342
+2026-04-09 15:08:10,042 [INFO] ======================================================================
+2026-04-09 15:08:10,043 [INFO] [least_conn|simple|read_heavy] Starting benchmark run
+2026-04-09 15:08:10,044 [INFO] [least_conn|simple|read_heavy] Duration=600s, Concurrency=50, Warmup=1000, Seed=342
+2026-04-09 15:08:10,045 [INFO] Starting QueryRouter [strategy=Least-Conn]
+2026-04-09 15:08:10,221 [INFO] Primary pool created (localhost:5439)
+2026-04-09 15:08:10,434 [INFO] Replica pool created: replica1 (localhost:5440)
+2026-04-09 15:08:10,638 [INFO] Replica pool created: replica2 (localhost:5441)
+2026-04-09 15:08:10,805 [INFO] Replica pool created: replica3 (localhost:5442)
+2026-04-09 15:08:10,887 [INFO] Health probe pool created for replica1
+2026-04-09 15:08:10,979 [INFO] Health probe pool created for replica2
+2026-04-09 15:08:11,078 [INFO] Health probe pool created for replica3
+2026-04-09 15:08:11,080 [INFO] Health checker started (interval=5.0s, EMA alpha=0.3)
+2026-04-09 15:08:11,330 [INFO] QueryRouter ready
+2026-04-09 15:08:11,332 [INFO] [least_conn|simple|read_heavy] Warm-up: 1000 queries...
+2026-04-09 15:08:13,976 [INFO] [least_conn|simple|read_heavy] Warm-up complete
+2026-04-09 15:08:13,978 [INFO] [least_conn|simple|read_heavy] Benchmark starting (600s)...
+2026-04-09 15:09:13,993 [INFO] [least_conn|simple|read_heavy] Progress: 60/600s (10%) — 60544 queries, 0 errors
+2026-04-09 15:10:13,993 [INFO] [least_conn|simple|read_heavy] Progress: 120/600s (20%) — 125678 queries, 0 errors
+2026-04-09 15:11:13,992 [INFO] [least_conn|simple|read_heavy] Progress: 180/600s (30%) — 191385 queries, 0 errors
+2026-04-09 15:12:13,992 [INFO] [least_conn|simple|read_heavy] Progress: 240/600s (40%) — 253691 queries, 0 errors
+2026-04-09 15:13:13,992 [INFO] [least_conn|simple|read_heavy] Progress: 300/600s (50%) — 311985 queries, 0 errors
+2026-04-09 15:14:13,994 [INFO] [least_conn|simple|read_heavy] Progress: 360/600s (60%) — 378178 queries, 0 errors
+2026-04-09 15:15:13,993 [INFO] [least_conn|simple|read_heavy] Progress: 420/600s (70%) — 443800 queries, 0 errors
+2026-04-09 15:16:13,994 [INFO] [least_conn|simple|read_heavy] Progress: 480/600s (80%) — 506451 queries, 0 errors
+2026-04-09 15:17:13,996 [INFO] [least_conn|simple|read_heavy] Progress: 540/600s (90%) — 560797 queries, 0 errors
+2026-04-09 15:18:13,993 [INFO] [least_conn|simple|read_heavy] Progress: 600/600s (100%) — 626789 queries, 0 errors
+2026-04-09 15:18:15,691 [INFO] [least_conn|simple|read_heavy] Benchmark complete: 626840 queries, 1044.7 qps, read_avg=48.73ms, errors=0
+2026-04-09 15:18:15,693 [INFO] Stopping QueryRouter...
+2026-04-09 15:18:15,737 [INFO] Health checker stopped
+2026-04-09 15:18:15,955 [INFO] QueryRouter stopped
+2026-04-09 15:18:16,234 [INFO] [23/150] DONE in 606.2s: qps=1044.7, read_avg=48.73ms
+2026-04-09 15:18:19,257 [INFO] 
+======================================================================
+2026-04-09 15:18:19,259 [INFO] [24/150] RUN: least_conn__simple__read_heavy__rep4
+2026-04-09 15:18:19,261 [INFO]   Strategy=least_conn, Complexity=simple, Workload=Read-Heavy (95:5), Rep=4, Seed=442
+2026-04-09 15:18:19,261 [INFO] ======================================================================
+2026-04-09 15:18:19,263 [INFO] [least_conn|simple|read_heavy] Starting benchmark run
+2026-04-09 15:18:19,263 [INFO] [least_conn|simple|read_heavy] Duration=600s, Concurrency=50, Warmup=1000, Seed=442
+2026-04-09 15:18:19,264 [INFO] Starting QueryRouter [strategy=Least-Conn]
+2026-04-09 15:18:19,491 [INFO] Primary pool created (localhost:5439)
+2026-04-09 15:18:19,720 [INFO] Replica pool created: replica1 (localhost:5440)
+2026-04-09 15:18:19,955 [INFO] Replica pool created: replica2 (localhost:5441)
+2026-04-09 15:18:20,157 [INFO] Replica pool created: replica3 (localhost:5442)
+2026-04-09 15:18:20,252 [INFO] Health probe pool created for replica1
+2026-04-09 15:18:20,341 [INFO] Health probe pool created for replica2
+2026-04-09 15:18:20,439 [INFO] Health probe pool created for replica3
+2026-04-09 15:18:20,439 [INFO] Health checker started (interval=5.0s, EMA alpha=0.3)
+2026-04-09 15:18:20,696 [INFO] QueryRouter ready
+2026-04-09 15:18:20,701 [INFO] [least_conn|simple|read_heavy] Warm-up: 1000 queries...
+2026-04-09 15:18:24,939 [INFO] [least_conn|simple|read_heavy] Warm-up complete
+2026-04-09 15:18:24,941 [INFO] [least_conn|simple|read_heavy] Benchmark starting (600s)...
+2026-04-09 15:19:24,967 [INFO] [least_conn|simple|read_heavy] Progress: 60/600s (10%) — 62549 queries, 0 errors
+2026-04-09 15:20:24,962 [INFO] [least_conn|simple|read_heavy] Progress: 120/600s (20%) — 129301 queries, 0 errors
+2026-04-09 15:21:24,959 [INFO] [least_conn|simple|read_heavy] Progress: 180/600s (30%) — 191577 queries, 0 errors
+2026-04-09 15:22:24,962 [INFO] [least_conn|simple|read_heavy] Progress: 240/600s (40%) — 251606 queries, 0 errors
+2026-04-09 15:23:24,976 [INFO] [least_conn|simple|read_heavy] Progress: 300/600s (50%) — 310850 queries, 0 errors
+2026-04-09 15:24:24,963 [INFO] [least_conn|simple|read_heavy] Progress: 360/600s (60%) — 381846 queries, 0 errors
+2026-04-09 15:25:24,960 [INFO] [least_conn|simple|read_heavy] Progress: 420/600s (70%) — 460009 queries, 0 errors
+2026-04-09 15:26:24,962 [INFO] [least_conn|simple|read_heavy] Progress: 480/600s (80%) — 536836 queries, 0 errors
+2026-04-09 15:27:25,071 [INFO] [least_conn|simple|read_heavy] Progress: 540/600s (90%) — 614997 queries, 0 errors
+2026-04-09 15:28:25,057 [INFO] [least_conn|simple|read_heavy] Progress: 600/600s (100%) — 693624 queries, 0 errors
+2026-04-09 15:28:26,341 [INFO] [least_conn|simple|read_heavy] Benchmark complete: 693674 queries, 1155.9 qps, read_avg=43.97ms, errors=0
+2026-04-09 15:28:26,342 [INFO] Stopping QueryRouter...
+2026-04-09 15:28:26,370 [INFO] Health checker stopped
+2026-04-09 15:28:26,411 [INFO] QueryRouter stopped
+2026-04-09 15:28:26,540 [INFO] [24/150] DONE in 607.3s: qps=1155.9, read_avg=43.97ms
+2026-04-09 15:28:29,553 [INFO] 
+======================================================================
+2026-04-09 15:28:29,557 [INFO] [25/150] RUN: least_conn__simple__read_heavy__rep5
+2026-04-09 15:28:29,559 [INFO]   Strategy=least_conn, Complexity=simple, Workload=Read-Heavy (95:5), Rep=5, Seed=542
+2026-04-09 15:28:29,559 [INFO] ======================================================================
+2026-04-09 15:28:29,561 [INFO] [least_conn|simple|read_heavy] Starting benchmark run
+2026-04-09 15:28:29,563 [INFO] [least_conn|simple|read_heavy] Duration=600s, Concurrency=50, Warmup=1000, Seed=542
+2026-04-09 15:28:29,563 [INFO] Starting QueryRouter [strategy=Least-Conn]
+2026-04-09 15:28:29,680 [INFO] Primary pool created (localhost:5439)
+2026-04-09 15:28:29,783 [INFO] Replica pool created: replica1 (localhost:5440)
+2026-04-09 15:28:29,891 [INFO] Replica pool created: replica2 (localhost:5441)
+2026-04-09 15:28:29,996 [INFO] Replica pool created: replica3 (localhost:5442)
+2026-04-09 15:28:30,067 [INFO] Health probe pool created for replica1
+2026-04-09 15:28:30,120 [INFO] Health probe pool created for replica2
+2026-04-09 15:28:30,169 [INFO] Health probe pool created for replica3
+2026-04-09 15:28:30,170 [INFO] Health checker started (interval=5.0s, EMA alpha=0.3)
+2026-04-09 15:28:30,318 [INFO] QueryRouter ready
+2026-04-09 15:28:30,323 [INFO] [least_conn|simple|read_heavy] Warm-up: 1000 queries...
+2026-04-09 15:28:31,603 [INFO] [least_conn|simple|read_heavy] Warm-up complete
+2026-04-09 15:28:31,604 [INFO] [least_conn|simple|read_heavy] Benchmark starting (600s)...
+2026-04-09 15:29:31,589 [INFO] [least_conn|simple|read_heavy] Progress: 60/600s (10%) — 78974 queries, 0 errors
+2026-04-09 15:30:31,588 [INFO] [least_conn|simple|read_heavy] Progress: 120/600s (20%) — 156712 queries, 0 errors
+2026-04-09 15:31:31,589 [INFO] [least_conn|simple|read_heavy] Progress: 180/600s (30%) — 228139 queries, 0 errors
+2026-04-09 15:32:31,584 [INFO] [least_conn|simple|read_heavy] Progress: 240/600s (40%) — 302286 queries, 0 errors
+2026-04-09 15:33:31,586 [INFO] [least_conn|simple|read_heavy] Progress: 300/600s (50%) — 375920 queries, 0 errors
+2026-04-09 15:34:31,587 [INFO] [least_conn|simple|read_heavy] Progress: 360/600s (60%) — 446913 queries, 0 errors
+2026-04-09 15:35:31,587 [INFO] [least_conn|simple|read_heavy] Progress: 420/600s (70%) — 524991 queries, 0 errors
+2026-04-09 15:36:31,588 [INFO] [least_conn|simple|read_heavy] Progress: 480/600s (80%) — 599868 queries, 0 errors
+2026-04-09 15:37:31,589 [INFO] [least_conn|simple|read_heavy] Progress: 540/600s (90%) — 677754 queries, 0 errors
+2026-04-09 15:38:31,586 [INFO] [least_conn|simple|read_heavy] Progress: 600/600s (100%) — 755997 queries, 0 errors
+2026-04-09 15:38:32,791 [INFO] [least_conn|simple|read_heavy] Benchmark complete: 756047 queries, 1260.1 qps, read_avg=40.32ms, errors=0
+2026-04-09 15:38:32,794 [INFO] Stopping QueryRouter...
+2026-04-09 15:38:32,826 [INFO] Health checker stopped
+2026-04-09 15:38:32,884 [INFO] QueryRouter stopped
+2026-04-09 15:38:33,026 [INFO] [25/150] DONE in 603.5s: qps=1260.1, read_avg=40.32ms
+2026-04-09 15:38:36,047 [INFO] 
+======================================================================
+2026-04-09 15:38:36,052 [INFO] [26/150] RUN: round_robin__medium__read_heavy__rep1
+2026-04-09 15:38:36,054 [INFO]   Strategy=round_robin, Complexity=medium, Workload=Read-Heavy (95:5), Rep=1, Seed=142
+2026-04-09 15:38:36,055 [INFO] ======================================================================
+2026-04-09 15:38:36,056 [INFO] [round_robin|medium|read_heavy] Starting benchmark run
+2026-04-09 15:38:36,056 [INFO] [round_robin|medium|read_heavy] Duration=600s, Concurrency=50, Warmup=1000, Seed=142
+2026-04-09 15:38:36,057 [INFO] Starting QueryRouter [strategy=RoundRobin]
+2026-04-09 15:38:36,161 [INFO] Primary pool created (localhost:5439)
+2026-04-09 15:38:36,257 [INFO] Replica pool created: replica1 (localhost:5440)
+2026-04-09 15:38:36,379 [INFO] Replica pool created: replica2 (localhost:5441)
+2026-04-09 15:38:36,462 [INFO] Replica pool created: replica3 (localhost:5442)
+2026-04-09 15:38:36,520 [INFO] Health probe pool created for replica1
+2026-04-09 15:38:36,582 [INFO] Health probe pool created for replica2
+2026-04-09 15:38:36,628 [INFO] Health probe pool created for replica3
+2026-04-09 15:38:36,630 [INFO] Health checker started (interval=5.0s, EMA alpha=0.3)
+2026-04-09 15:38:36,755 [INFO] QueryRouter ready
+2026-04-09 15:38:36,757 [INFO] [round_robin|medium|read_heavy] Warm-up: 1000 queries...
+2026-04-09 15:38:40,045 [INFO] [round_robin|medium|read_heavy] Warm-up complete
+2026-04-09 15:38:40,053 [INFO] [round_robin|medium|read_heavy] Benchmark starting (600s)...
+2026-04-09 15:39:40,062 [INFO] [round_robin|medium|read_heavy] Progress: 60/600s (10%) — 55533 queries, 0 errors
+2026-04-09 15:40:40,067 [INFO] [round_robin|medium|read_heavy] Progress: 120/600s (20%) — 104525 queries, 0 errors
+2026-04-09 15:41:40,065 [INFO] [round_robin|medium|read_heavy] Progress: 180/600s (30%) — 156206 queries, 0 errors
+2026-04-09 15:42:40,063 [INFO] [round_robin|medium|read_heavy] Progress: 240/600s (40%) — 215678 queries, 0 errors
+2026-04-09 15:43:40,054 [INFO] [round_robin|medium|read_heavy] Progress: 300/600s (50%) — 275628 queries, 0 errors
+2026-04-09 15:44:40,061 [INFO] [round_robin|medium|read_heavy] Progress: 360/600s (60%) — 336910 queries, 0 errors
+2026-04-09 15:45:40,058 [INFO] [round_robin|medium|read_heavy] Progress: 420/600s (70%) — 392412 queries, 0 errors
+2026-04-09 15:46:40,060 [INFO] [round_robin|medium|read_heavy] Progress: 480/600s (80%) — 451523 queries, 0 errors
+2026-04-09 15:47:40,061 [INFO] [round_robin|medium|read_heavy] Progress: 540/600s (90%) — 511932 queries, 0 errors
+2026-04-09 15:48:40,050 [INFO] [round_robin|medium|read_heavy] Progress: 600/600s (100%) — 572229 queries, 0 errors
+2026-04-09 15:48:41,806 [INFO] [round_robin|medium|read_heavy] Benchmark complete: 572279 queries, 953.4 qps, read_avg=52.85ms, errors=0
+2026-04-09 15:48:41,811 [INFO] Stopping QueryRouter...
+2026-04-09 15:48:41,847 [INFO] Health checker stopped
+2026-04-09 15:48:42,121 [INFO] QueryRouter stopped
+2026-04-09 15:48:42,311 [INFO] [26/150] DONE in 606.2s: qps=953.4, read_avg=52.85ms
+2026-04-09 15:48:45,321 [INFO] 
+======================================================================
+2026-04-09 15:48:45,326 [INFO] [27/150] RUN: round_robin__medium__read_heavy__rep2
+2026-04-09 15:48:45,326 [INFO]   Strategy=round_robin, Complexity=medium, Workload=Read-Heavy (95:5), Rep=2, Seed=242
+2026-04-09 15:48:45,328 [INFO] ======================================================================
+2026-04-09 15:48:45,329 [INFO] [round_robin|medium|read_heavy] Starting benchmark run
+2026-04-09 15:48:45,329 [INFO] [round_robin|medium|read_heavy] Duration=600s, Concurrency=50, Warmup=1000, Seed=242
+2026-04-09 15:48:45,331 [INFO] Starting QueryRouter [strategy=RoundRobin]
+2026-04-09 15:48:45,497 [INFO] Primary pool created (localhost:5439)
+2026-04-09 15:48:45,705 [INFO] Replica pool created: replica1 (localhost:5440)
+2026-04-09 15:48:45,914 [INFO] Replica pool created: replica2 (localhost:5441)
+2026-04-09 15:48:46,125 [INFO] Replica pool created: replica3 (localhost:5442)
+2026-04-09 15:48:46,221 [INFO] Health probe pool created for replica1
+2026-04-09 15:48:46,317 [INFO] Health probe pool created for replica2
+2026-04-09 15:48:46,418 [INFO] Health probe pool created for replica3
+2026-04-09 15:48:46,421 [INFO] Health checker started (interval=5.0s, EMA alpha=0.3)
+2026-04-09 15:48:46,633 [INFO] QueryRouter ready
+2026-04-09 15:48:46,633 [INFO] [round_robin|medium|read_heavy] Warm-up: 1000 queries...
+2026-04-09 15:48:51,694 [INFO] [round_robin|medium|read_heavy] Warm-up complete
+2026-04-09 15:48:51,694 [INFO] [round_robin|medium|read_heavy] Benchmark starting (600s)...
+2026-04-09 15:49:51,721 [INFO] [round_robin|medium|read_heavy] Progress: 60/600s (10%) — 61355 queries, 0 errors
+2026-04-09 15:50:51,716 [INFO] [round_robin|medium|read_heavy] Progress: 120/600s (20%) — 121829 queries, 0 errors
+2026-04-09 15:51:51,715 [INFO] [round_robin|medium|read_heavy] Progress: 180/600s (30%) — 178740 queries, 0 errors
+2026-04-09 15:52:51,708 [INFO] [round_robin|medium|read_heavy] Progress: 240/600s (40%) — 226976 queries, 0 errors
+2026-04-09 15:53:51,712 [INFO] [round_robin|medium|read_heavy] Progress: 300/600s (50%) — 274232 queries, 0 errors
+2026-04-09 15:54:51,708 [INFO] [round_robin|medium|read_heavy] Progress: 360/600s (60%) — 322565 queries, 0 errors
+2026-04-09 15:55:51,712 [INFO] [round_robin|medium|read_heavy] Progress: 420/600s (70%) — 371002 queries, 0 errors
+2026-04-09 15:56:51,713 [INFO] [round_robin|medium|read_heavy] Progress: 480/600s (80%) — 419944 queries, 0 errors
+2026-04-09 15:57:51,712 [INFO] [round_robin|medium|read_heavy] Progress: 540/600s (90%) — 467455 queries, 0 errors
+2026-04-09 15:58:51,707 [INFO] [round_robin|medium|read_heavy] Progress: 600/600s (100%) — 515344 queries, 0 errors
+2026-04-09 15:58:53,330 [INFO] [round_robin|medium|read_heavy] Benchmark complete: 515394 queries, 858.6 qps, read_avg=59.70ms, errors=0
+2026-04-09 15:58:53,335 [INFO] Stopping QueryRouter...
+2026-04-09 15:58:53,365 [INFO] Health checker stopped
+2026-04-09 15:58:53,998 [INFO] QueryRouter stopped
+2026-04-09 15:58:54,265 [INFO] [27/150] DONE in 608.9s: qps=858.6, read_avg=59.70ms
+2026-04-09 15:58:57,275 [INFO] 
+======================================================================
+2026-04-09 15:58:57,276 [INFO] [28/150] RUN: round_robin__medium__read_heavy__rep3
+2026-04-09 15:58:57,278 [INFO]   Strategy=round_robin, Complexity=medium, Workload=Read-Heavy (95:5), Rep=3, Seed=342
+2026-04-09 15:58:57,279 [INFO] ======================================================================
+2026-04-09 15:58:57,280 [INFO] [round_robin|medium|read_heavy] Starting benchmark run
+2026-04-09 15:58:57,281 [INFO] [round_robin|medium|read_heavy] Duration=600s, Concurrency=50, Warmup=1000, Seed=342
+2026-04-09 15:58:57,282 [INFO] Starting QueryRouter [strategy=RoundRobin]
+2026-04-09 15:58:57,516 [INFO] Primary pool created (localhost:5439)
+2026-04-09 15:58:57,718 [INFO] Replica pool created: replica1 (localhost:5440)
+2026-04-09 15:58:57,900 [INFO] Replica pool created: replica2 (localhost:5441)
+2026-04-09 15:58:58,136 [INFO] Replica pool created: replica3 (localhost:5442)
+2026-04-09 15:58:58,279 [INFO] Health probe pool created for replica1
+2026-04-09 15:58:58,394 [INFO] Health probe pool created for replica2
+2026-04-09 15:58:58,496 [INFO] Health probe pool created for replica3
+2026-04-09 15:58:58,498 [INFO] Health checker started (interval=5.0s, EMA alpha=0.3)
+2026-04-09 15:58:58,766 [INFO] QueryRouter ready
+2026-04-09 15:58:58,767 [INFO] [round_robin|medium|read_heavy] Warm-up: 1000 queries...
+2026-04-09 15:59:04,573 [INFO] [round_robin|medium|read_heavy] Warm-up complete
+2026-04-09 15:59:04,574 [INFO] [round_robin|medium|read_heavy] Benchmark starting (600s)...
+2026-04-09 16:00:04,582 [INFO] [round_robin|medium|read_heavy] Progress: 60/600s (10%) — 47977 queries, 0 errors
+2026-04-09 16:01:04,594 [INFO] [round_robin|medium|read_heavy] Progress: 120/600s (20%) — 96359 queries, 0 errors
+2026-04-09 16:02:04,582 [INFO] [round_robin|medium|read_heavy] Progress: 180/600s (30%) — 142127 queries, 0 errors
+2026-04-09 16:03:04,592 [INFO] [round_robin|medium|read_heavy] Progress: 240/600s (40%) — 189646 queries, 0 errors
+2026-04-09 16:04:04,589 [INFO] [round_robin|medium|read_heavy] Progress: 300/600s (50%) — 237667 queries, 0 errors
+2026-04-09 16:05:04,585 [INFO] [round_robin|medium|read_heavy] Progress: 360/600s (60%) — 283807 queries, 0 errors
+2026-04-09 16:06:04,608 [INFO] [round_robin|medium|read_heavy] Progress: 420/600s (70%) — 332489 queries, 0 errors
+2026-04-09 16:07:04,581 [INFO] [round_robin|medium|read_heavy] Progress: 480/600s (80%) — 381066 queries, 0 errors
+2026-04-09 16:08:04,598 [INFO] [round_robin|medium|read_heavy] Progress: 540/600s (90%) — 432209 queries, 0 errors
+2026-04-09 16:09:04,582 [INFO] [round_robin|medium|read_heavy] Progress: 600/600s (100%) — 487226 queries, 0 errors
+2026-04-09 16:09:05,582 [INFO] [round_robin|medium|read_heavy] Benchmark complete: 487277 queries, 812.0 qps, read_avg=63.23ms, errors=0
+2026-04-09 16:09:05,586 [INFO] Stopping QueryRouter...
+2026-04-09 16:09:05,599 [INFO] Health checker stopped
+2026-04-09 16:09:05,921 [INFO] QueryRouter stopped
+2026-04-09 16:09:06,033 [INFO] [28/150] DONE in 608.8s: qps=812.0, read_avg=63.23ms
+2026-04-09 16:09:09,049 [INFO] 
+======================================================================
+2026-04-09 16:09:09,053 [INFO] [29/150] RUN: round_robin__medium__read_heavy__rep4
+2026-04-09 16:09:09,054 [INFO]   Strategy=round_robin, Complexity=medium, Workload=Read-Heavy (95:5), Rep=4, Seed=442
+2026-04-09 16:09:09,055 [INFO] ======================================================================
+2026-04-09 16:09:09,055 [INFO] [round_robin|medium|read_heavy] Starting benchmark run
+2026-04-09 16:09:09,055 [INFO] [round_robin|medium|read_heavy] Duration=600s, Concurrency=50, Warmup=1000, Seed=442
+2026-04-09 16:09:09,055 [INFO] Starting QueryRouter [strategy=RoundRobin]
+2026-04-09 16:09:09,162 [INFO] Primary pool created (localhost:5439)
+2026-04-09 16:09:09,261 [INFO] Replica pool created: replica1 (localhost:5440)
+2026-04-09 16:09:09,369 [INFO] Replica pool created: replica2 (localhost:5441)
+2026-04-09 16:09:09,475 [INFO] Replica pool created: replica3 (localhost:5442)
+2026-04-09 16:09:09,529 [INFO] Health probe pool created for replica1
+2026-04-09 16:09:09,577 [INFO] Health probe pool created for replica2
+2026-04-09 16:09:09,628 [INFO] Health probe pool created for replica3
+2026-04-09 16:09:09,630 [INFO] Health checker started (interval=5.0s, EMA alpha=0.3)
+2026-04-09 16:09:09,778 [INFO] QueryRouter ready
+2026-04-09 16:09:09,783 [INFO] [round_robin|medium|read_heavy] Warm-up: 1000 queries...
+2026-04-09 16:09:13,497 [INFO] [round_robin|medium|read_heavy] Warm-up complete
+2026-04-09 16:09:13,497 [INFO] [round_robin|medium|read_heavy] Benchmark starting (600s)...
+2026-04-09 16:10:13,509 [INFO] [round_robin|medium|read_heavy] Progress: 60/600s (10%) — 53676 queries, 0 errors
+2026-04-09 16:11:13,510 [INFO] [round_robin|medium|read_heavy] Progress: 120/600s (20%) — 112009 queries, 0 errors
+2026-04-09 16:12:13,509 [INFO] [round_robin|medium|read_heavy] Progress: 180/600s (30%) — 167282 queries, 0 errors
+2026-04-09 16:13:13,516 [INFO] [round_robin|medium|read_heavy] Progress: 240/600s (40%) — 218895 queries, 0 errors
+2026-04-09 16:14:13,505 [INFO] [round_robin|medium|read_heavy] Progress: 300/600s (50%) — 274325 queries, 0 errors
+2026-04-09 16:15:13,507 [INFO] [round_robin|medium|read_heavy] Progress: 360/600s (60%) — 333275 queries, 0 errors
+2026-04-09 16:16:13,507 [INFO] [round_robin|medium|read_heavy] Progress: 420/600s (70%) — 392805 queries, 0 errors
+2026-04-09 16:17:13,507 [INFO] [round_robin|medium|read_heavy] Progress: 480/600s (80%) — 446972 queries, 0 errors
+2026-04-09 16:18:13,505 [INFO] [round_robin|medium|read_heavy] Progress: 540/600s (90%) — 500597 queries, 0 errors
+2026-04-09 16:19:13,504 [INFO] [round_robin|medium|read_heavy] Progress: 600/600s (100%) — 556350 queries, 0 errors
+2026-04-09 16:19:14,631 [INFO] [round_robin|medium|read_heavy] Benchmark complete: 556400 queries, 927.1 qps, read_avg=55.54ms, errors=0
+2026-04-09 16:19:14,635 [INFO] Stopping QueryRouter...
+2026-04-09 16:19:14,651 [INFO] Health checker stopped
+2026-04-09 16:19:14,975 [INFO] QueryRouter stopped
+2026-04-09 16:19:15,103 [INFO] [29/150] DONE in 606.0s: qps=927.1, read_avg=55.54ms
+2026-04-09 16:19:18,122 [INFO] 
+======================================================================
+2026-04-09 16:19:18,123 [INFO] [30/150] RUN: round_robin__medium__read_heavy__rep5
+2026-04-09 16:19:18,124 [INFO]   Strategy=round_robin, Complexity=medium, Workload=Read-Heavy (95:5), Rep=5, Seed=542
+2026-04-09 16:19:18,125 [INFO] ======================================================================
+2026-04-09 16:19:18,125 [INFO] [round_robin|medium|read_heavy] Starting benchmark run
+2026-04-09 16:19:18,125 [INFO] [round_robin|medium|read_heavy] Duration=600s, Concurrency=50, Warmup=1000, Seed=542
+2026-04-09 16:19:18,126 [INFO] Starting QueryRouter [strategy=RoundRobin]
+2026-04-09 16:19:18,227 [INFO] Primary pool created (localhost:5439)
+2026-04-09 16:19:18,324 [INFO] Replica pool created: replica1 (localhost:5440)
+2026-04-09 16:19:18,414 [INFO] Replica pool created: replica2 (localhost:5441)
+2026-04-09 16:19:18,519 [INFO] Replica pool created: replica3 (localhost:5442)
+2026-04-09 16:19:18,561 [INFO] Health probe pool created for replica1
+2026-04-09 16:19:18,609 [INFO] Health probe pool created for replica2
+2026-04-09 16:19:18,655 [INFO] Health probe pool created for replica3
+2026-04-09 16:19:18,656 [INFO] Health checker started (interval=5.0s, EMA alpha=0.3)
+2026-04-09 16:19:18,805 [INFO] QueryRouter ready
+2026-04-09 16:19:18,901 [INFO] [round_robin|medium|read_heavy] Warm-up: 1000 queries...
+2026-04-09 16:19:22,309 [INFO] [round_robin|medium|read_heavy] Warm-up complete
+2026-04-09 16:19:22,310 [INFO] [round_robin|medium|read_heavy] Benchmark starting (600s)...
+2026-04-09 16:20:22,302 [INFO] [round_robin|medium|read_heavy] Progress: 60/600s (10%) — 52557 queries, 0 errors
+2026-04-09 16:21:22,303 [INFO] [round_robin|medium|read_heavy] Progress: 120/600s (20%) — 104952 queries, 0 errors
+2026-04-09 16:22:22,303 [INFO] [round_robin|medium|read_heavy] Progress: 180/600s (30%) — 157125 queries, 0 errors
+2026-04-09 16:23:22,300 [INFO] [round_robin|medium|read_heavy] Progress: 240/600s (40%) — 210316 queries, 0 errors
+2026-04-09 16:24:22,300 [INFO] [round_robin|medium|read_heavy] Progress: 300/600s (50%) — 257156 queries, 0 errors
+2026-04-09 16:25:22,300 [INFO] [round_robin|medium|read_heavy] Progress: 360/600s (60%) — 304786 queries, 0 errors
+2026-04-09 16:26:22,316 [INFO] [round_robin|medium|read_heavy] Progress: 420/600s (70%) — 356591 queries, 0 errors
+2026-04-09 16:27:22,302 [INFO] [round_robin|medium|read_heavy] Progress: 480/600s (80%) — 404585 queries, 0 errors
+2026-04-09 16:28:22,303 [INFO] [round_robin|medium|read_heavy] Progress: 540/600s (90%) — 469474 queries, 0 errors
+2026-04-09 16:29:22,308 [INFO] [round_robin|medium|read_heavy] Progress: 600/600s (100%) — 533034 queries, 0 errors
+2026-04-09 16:29:23,306 [INFO] [round_robin|medium|read_heavy] Benchmark complete: 533086 queries, 888.3 qps, read_avg=57.85ms, errors=0
+2026-04-09 16:29:23,307 [INFO] Stopping QueryRouter...
+2026-04-09 16:29:23,321 [INFO] Health checker stopped
+2026-04-09 16:29:23,620 [INFO] QueryRouter stopped
+2026-04-09 16:29:23,735 [INFO] [30/150] DONE in 605.6s: qps=888.3, read_avg=57.85ms
+2026-04-09 16:29:26,752 [INFO] 
+======================================================================
+2026-04-09 16:29:26,757 [INFO] [31/150] RUN: load_based__medium__read_heavy__rep1
+2026-04-09 16:29:26,757 [INFO]   Strategy=load_based, Complexity=medium, Workload=Read-Heavy (95:5), Rep=1, Seed=142
+2026-04-09 16:29:26,757 [INFO] ======================================================================
+2026-04-09 16:29:26,757 [INFO] [load_based|medium|read_heavy] Starting benchmark run
+2026-04-09 16:29:26,757 [INFO] [load_based|medium|read_heavy] Duration=600s, Concurrency=50, Warmup=1000, Seed=142
+2026-04-09 16:29:26,758 [INFO] Starting QueryRouter [strategy=Load-Based]
+2026-04-09 16:29:26,832 [INFO] Primary pool created (localhost:5439)
+2026-04-09 16:29:26,926 [INFO] Replica pool created: replica1 (localhost:5440)
+2026-04-09 16:29:27,032 [INFO] Replica pool created: replica2 (localhost:5441)
+2026-04-09 16:29:27,124 [INFO] Replica pool created: replica3 (localhost:5442)
+2026-04-09 16:29:27,164 [INFO] Health probe pool created for replica1
+2026-04-09 16:29:27,207 [INFO] Health probe pool created for replica2
+2026-04-09 16:29:27,244 [INFO] Health probe pool created for replica3
+2026-04-09 16:29:27,245 [INFO] Health checker started (interval=5.0s, EMA alpha=0.3)
+2026-04-09 16:29:27,371 [INFO] QueryRouter ready
+2026-04-09 16:29:27,372 [INFO] [load_based|medium|read_heavy] Warm-up: 1000 queries...
+2026-04-09 16:29:29,076 [INFO] [load_based|medium|read_heavy] Warm-up complete
+2026-04-09 16:29:29,076 [INFO] [load_based|medium|read_heavy] Benchmark starting (600s)...
+2026-04-09 16:30:29,086 [INFO] [load_based|medium|read_heavy] Progress: 60/600s (10%) — 60217 queries, 0 errors
+2026-04-09 16:31:29,089 [INFO] [load_based|medium|read_heavy] Progress: 120/600s (20%) — 128818 queries, 0 errors
+2026-04-09 16:32:29,086 [INFO] [load_based|medium|read_heavy] Progress: 180/600s (30%) — 196584 queries, 0 errors
+2026-04-09 16:33:29,083 [INFO] [load_based|medium|read_heavy] Progress: 240/600s (40%) — 260257 queries, 0 errors
+2026-04-09 16:34:29,085 [INFO] [load_based|medium|read_heavy] Progress: 300/600s (50%) — 322917 queries, 0 errors
+2026-04-09 16:35:29,087 [INFO] [load_based|medium|read_heavy] Progress: 360/600s (60%) — 377955 queries, 0 errors
+2026-04-09 16:36:29,086 [INFO] [load_based|medium|read_heavy] Progress: 420/600s (70%) — 441445 queries, 0 errors
+2026-04-09 16:37:29,088 [INFO] [load_based|medium|read_heavy] Progress: 480/600s (80%) — 506614 queries, 0 errors
+2026-04-09 16:38:29,087 [INFO] [load_based|medium|read_heavy] Progress: 540/600s (90%) — 567877 queries, 0 errors
+2026-04-09 16:39:29,086 [INFO] [load_based|medium|read_heavy] Progress: 600/600s (100%) — 628948 queries, 0 errors
+2026-04-09 16:39:30,317 [INFO] [load_based|medium|read_heavy] Benchmark complete: 629000 queries, 1048.3 qps, read_avg=48.69ms, errors=0
+2026-04-09 16:39:30,321 [INFO] Stopping QueryRouter...
+2026-04-09 16:39:30,334 [INFO] Health checker stopped
+2026-04-09 16:39:30,668 [INFO] QueryRouter stopped
+2026-04-09 16:39:30,813 [INFO] [31/150] DONE in 604.0s: qps=1048.3, read_avg=48.69ms
+2026-04-09 16:39:33,822 [INFO] 
+======================================================================
+2026-04-09 16:39:33,827 [INFO] [32/150] RUN: load_based__medium__read_heavy__rep2
+2026-04-09 16:39:33,827 [INFO]   Strategy=load_based, Complexity=medium, Workload=Read-Heavy (95:5), Rep=2, Seed=242
+2026-04-09 16:39:33,828 [INFO] ======================================================================
+2026-04-09 16:39:33,828 [INFO] [load_based|medium|read_heavy] Starting benchmark run
+2026-04-09 16:39:33,828 [INFO] [load_based|medium|read_heavy] Duration=600s, Concurrency=50, Warmup=1000, Seed=242
+2026-04-09 16:39:33,828 [INFO] Starting QueryRouter [strategy=Load-Based]
+2026-04-09 16:39:33,938 [INFO] Primary pool created (localhost:5439)
+2026-04-09 16:39:34,036 [INFO] Replica pool created: replica1 (localhost:5440)
+2026-04-09 16:39:34,132 [INFO] Replica pool created: replica2 (localhost:5441)
+2026-04-09 16:39:34,227 [INFO] Replica pool created: replica3 (localhost:5442)
+2026-04-09 16:39:34,277 [INFO] Health probe pool created for replica1
+2026-04-09 16:39:34,325 [INFO] Health probe pool created for replica2
+2026-04-09 16:39:34,374 [INFO] Health probe pool created for replica3
+2026-04-09 16:39:34,375 [INFO] Health checker started (interval=5.0s, EMA alpha=0.3)
+2026-04-09 16:39:34,525 [INFO] QueryRouter ready
+2026-04-09 16:39:34,526 [INFO] [load_based|medium|read_heavy] Warm-up: 1000 queries...
+2026-04-09 16:39:36,408 [INFO] [load_based|medium|read_heavy] Warm-up complete
+2026-04-09 16:39:36,409 [INFO] [load_based|medium|read_heavy] Benchmark starting (600s)...
+2026-04-09 16:40:36,419 [INFO] [load_based|medium|read_heavy] Progress: 60/600s (10%) — 55883 queries, 0 errors
+2026-04-09 16:41:36,411 [INFO] [load_based|medium|read_heavy] Progress: 120/600s (20%) — 116650 queries, 0 errors
+2026-04-09 16:42:36,423 [INFO] [load_based|medium|read_heavy] Progress: 180/600s (30%) — 177347 queries, 0 errors
+2026-04-09 16:43:36,415 [INFO] [load_based|medium|read_heavy] Progress: 240/600s (40%) — 239540 queries, 0 errors
+2026-04-09 16:44:36,419 [INFO] [load_based|medium|read_heavy] Progress: 300/600s (50%) — 298525 queries, 0 errors
+2026-04-09 16:45:36,435 [INFO] [load_based|medium|read_heavy] Progress: 360/600s (60%) — 348718 queries, 0 errors
+2026-04-09 16:46:36,429 [INFO] [load_based|medium|read_heavy] Progress: 420/600s (70%) — 410220 queries, 0 errors
+2026-04-09 16:47:36,427 [INFO] [load_based|medium|read_heavy] Progress: 480/600s (80%) — 468380 queries, 0 errors
+2026-04-09 16:48:36,430 [INFO] [load_based|medium|read_heavy] Progress: 540/600s (90%) — 527112 queries, 0 errors
+2026-04-09 16:49:36,432 [INFO] [load_based|medium|read_heavy] Progress: 600/600s (100%) — 587713 queries, 0 errors
+2026-04-09 16:49:37,466 [INFO] [load_based|medium|read_heavy] Benchmark complete: 587766 queries, 979.5 qps, read_avg=52.15ms, errors=0
+2026-04-09 16:49:37,470 [INFO] Stopping QueryRouter...
+2026-04-09 16:49:37,484 [INFO] Health checker stopped
+2026-04-09 16:49:37,724 [INFO] QueryRouter stopped
+2026-04-09 16:49:37,840 [INFO] [32/150] DONE in 604.0s: qps=979.5, read_avg=52.15ms
+2026-04-09 16:49:40,854 [INFO] 
+======================================================================
+2026-04-09 16:49:40,857 [INFO] [33/150] RUN: load_based__medium__read_heavy__rep3
+2026-04-09 16:49:40,858 [INFO]   Strategy=load_based, Complexity=medium, Workload=Read-Heavy (95:5), Rep=3, Seed=342
+2026-04-09 16:49:40,858 [INFO] ======================================================================
+2026-04-09 16:49:40,858 [INFO] [load_based|medium|read_heavy] Starting benchmark run
+2026-04-09 16:49:40,858 [INFO] [load_based|medium|read_heavy] Duration=600s, Concurrency=50, Warmup=1000, Seed=342
+2026-04-09 16:49:40,860 [INFO] Starting QueryRouter [strategy=Load-Based]
+2026-04-09 16:49:40,917 [INFO] Primary pool created (localhost:5439)
+2026-04-09 16:49:40,991 [INFO] Replica pool created: replica1 (localhost:5440)
+2026-04-09 16:49:41,067 [INFO] Replica pool created: replica2 (localhost:5441)
+2026-04-09 16:49:41,129 [INFO] Replica pool created: replica3 (localhost:5442)
+2026-04-09 16:49:41,168 [INFO] Health probe pool created for replica1
+2026-04-09 16:49:41,204 [INFO] Health probe pool created for replica2
+2026-04-09 16:49:41,238 [INFO] Health probe pool created for replica3
+2026-04-09 16:49:41,239 [INFO] Health checker started (interval=5.0s, EMA alpha=0.3)
+2026-04-09 16:49:41,352 [INFO] QueryRouter ready
+2026-04-09 16:49:41,353 [INFO] [load_based|medium|read_heavy] Warm-up: 1000 queries...
+2026-04-09 16:49:42,973 [INFO] [load_based|medium|read_heavy] Warm-up complete
+2026-04-09 16:49:42,974 [INFO] [load_based|medium|read_heavy] Benchmark starting (600s)...
+2026-04-09 16:50:42,958 [INFO] [load_based|medium|read_heavy] Progress: 60/600s (10%) — 56381 queries, 0 errors
+2026-04-09 16:51:42,964 [INFO] [load_based|medium|read_heavy] Progress: 120/600s (20%) — 115807 queries, 0 errors
+2026-04-09 16:52:42,963 [INFO] [load_based|medium|read_heavy] Progress: 180/600s (30%) — 168866 queries, 0 errors
+2026-04-09 16:53:42,962 [INFO] [load_based|medium|read_heavy] Progress: 240/600s (40%) — 228636 queries, 0 errors
+2026-04-09 16:54:42,968 [INFO] [load_based|medium|read_heavy] Progress: 300/600s (50%) — 288874 queries, 0 errors
+2026-04-09 16:55:42,965 [INFO] [load_based|medium|read_heavy] Progress: 360/600s (60%) — 344687 queries, 0 errors
+2026-04-09 16:56:42,963 [INFO] [load_based|medium|read_heavy] Progress: 420/600s (70%) — 410655 queries, 0 errors
+2026-04-09 16:57:42,959 [INFO] [load_based|medium|read_heavy] Progress: 480/600s (80%) — 474064 queries, 0 errors
+2026-04-09 16:58:42,962 [INFO] [load_based|medium|read_heavy] Progress: 540/600s (90%) — 529841 queries, 0 errors
+2026-04-09 16:59:42,960 [INFO] [load_based|medium|read_heavy] Progress: 600/600s (100%) — 582735 queries, 0 errors
+2026-04-09 16:59:43,951 [INFO] [load_based|medium|read_heavy] Benchmark complete: 582786 queries, 971.3 qps, read_avg=52.62ms, errors=0
+2026-04-09 16:59:43,953 [INFO] Stopping QueryRouter...
+2026-04-09 16:59:43,964 [INFO] Health checker stopped
+2026-04-09 16:59:44,278 [INFO] QueryRouter stopped
+2026-04-09 16:59:44,417 [INFO] [33/150] DONE in 603.6s: qps=971.3, read_avg=52.62ms
+2026-04-09 16:59:47,435 [INFO] 
+======================================================================
+2026-04-09 16:59:47,440 [INFO] [34/150] RUN: load_based__medium__read_heavy__rep4
+2026-04-09 16:59:47,440 [INFO]   Strategy=load_based, Complexity=medium, Workload=Read-Heavy (95:5), Rep=4, Seed=442
+2026-04-09 16:59:47,440 [INFO] ======================================================================
+2026-04-09 16:59:47,440 [INFO] [load_based|medium|read_heavy] Starting benchmark run
+2026-04-09 16:59:47,441 [INFO] [load_based|medium|read_heavy] Duration=600s, Concurrency=50, Warmup=1000, Seed=442
+2026-04-09 16:59:47,441 [INFO] Starting QueryRouter [strategy=Load-Based]
+2026-04-09 16:59:47,536 [INFO] Primary pool created (localhost:5439)
+2026-04-09 16:59:47,628 [INFO] Replica pool created: replica1 (localhost:5440)
+2026-04-09 16:59:47,720 [INFO] Replica pool created: replica2 (localhost:5441)
+2026-04-09 16:59:47,819 [INFO] Replica pool created: replica3 (localhost:5442)
+2026-04-09 16:59:47,884 [INFO] Health probe pool created for replica1
+2026-04-09 16:59:47,929 [INFO] Health probe pool created for replica2
+2026-04-09 16:59:47,973 [INFO] Health probe pool created for replica3
+2026-04-09 16:59:47,975 [INFO] Health checker started (interval=5.0s, EMA alpha=0.3)
+2026-04-09 16:59:48,111 [INFO] QueryRouter ready
+2026-04-09 16:59:48,112 [INFO] [load_based|medium|read_heavy] Warm-up: 1000 queries...
+2026-04-09 16:59:50,287 [INFO] [load_based|medium|read_heavy] Warm-up complete
+2026-04-09 16:59:50,289 [INFO] [load_based|medium|read_heavy] Benchmark starting (600s)...
+2026-04-09 17:00:50,306 [INFO] [load_based|medium|read_heavy] Progress: 60/600s (10%) — 49506 queries, 0 errors
+2026-04-09 17:01:50,308 [INFO] [load_based|medium|read_heavy] Progress: 120/600s (20%) — 109904 queries, 0 errors
+2026-04-09 17:02:50,306 [INFO] [load_based|medium|read_heavy] Progress: 180/600s (30%) — 172149 queries, 0 errors
+2026-04-09 17:03:50,308 [INFO] [load_based|medium|read_heavy] Progress: 240/600s (40%) — 236749 queries, 0 errors
+2026-04-09 17:04:50,306 [INFO] [load_based|medium|read_heavy] Progress: 300/600s (50%) — 299341 queries, 0 errors
+2026-04-09 17:05:50,304 [INFO] [load_based|medium|read_heavy] Progress: 360/600s (60%) — 355648 queries, 0 errors
+2026-04-09 17:06:50,307 [INFO] [load_based|medium|read_heavy] Progress: 420/600s (70%) — 412814 queries, 0 errors
+2026-04-09 17:07:50,307 [INFO] [load_based|medium|read_heavy] Progress: 480/600s (80%) — 476449 queries, 0 errors
+2026-04-09 17:08:50,307 [INFO] [load_based|medium|read_heavy] Progress: 540/600s (90%) — 539254 queries, 0 errors
+2026-04-09 17:09:50,306 [INFO] [load_based|medium|read_heavy] Progress: 600/600s (100%) — 602890 queries, 0 errors
+2026-04-09 17:09:51,375 [INFO] [load_based|medium|read_heavy] Benchmark complete: 602940 queries, 1004.8 qps, read_avg=50.89ms, errors=0
+2026-04-09 17:09:51,379 [INFO] Stopping QueryRouter...
+2026-04-09 17:09:51,392 [INFO] Health checker stopped
+2026-04-09 17:09:51,625 [INFO] QueryRouter stopped
+2026-04-09 17:09:51,756 [INFO] [34/150] DONE in 604.3s: qps=1004.8, read_avg=50.89ms
+2026-04-09 17:09:54,771 [INFO] 
+======================================================================
+2026-04-09 17:09:54,776 [INFO] [35/150] RUN: load_based__medium__read_heavy__rep5
+2026-04-09 17:09:54,776 [INFO]   Strategy=load_based, Complexity=medium, Workload=Read-Heavy (95:5), Rep=5, Seed=542
+2026-04-09 17:09:54,776 [INFO] ======================================================================
+2026-04-09 17:09:54,777 [INFO] [load_based|medium|read_heavy] Starting benchmark run
+2026-04-09 17:09:54,777 [INFO] [load_based|medium|read_heavy] Duration=600s, Concurrency=50, Warmup=1000, Seed=542
+2026-04-09 17:09:54,777 [INFO] Starting QueryRouter [strategy=Load-Based]
+2026-04-09 17:09:54,875 [INFO] Primary pool created (localhost:5439)
+2026-04-09 17:09:54,984 [INFO] Replica pool created: replica1 (localhost:5440)
+2026-04-09 17:09:55,097 [INFO] Replica pool created: replica2 (localhost:5441)
+2026-04-09 17:09:55,193 [INFO] Replica pool created: replica3 (localhost:5442)
+2026-04-09 17:09:55,242 [INFO] Health probe pool created for replica1
+2026-04-09 17:09:55,294 [INFO] Health probe pool created for replica2
+2026-04-09 17:09:55,349 [INFO] Health probe pool created for replica3
+2026-04-09 17:09:55,350 [INFO] Health checker started (interval=5.0s, EMA alpha=0.3)
+2026-04-09 17:09:55,478 [INFO] QueryRouter ready
+2026-04-09 17:09:55,480 [INFO] [load_based|medium|read_heavy] Warm-up: 1000 queries...
+2026-04-09 17:09:57,176 [INFO] [load_based|medium|read_heavy] Warm-up complete
+2026-04-09 17:09:57,177 [INFO] [load_based|medium|read_heavy] Benchmark starting (600s)...
+2026-04-09 17:10:57,183 [INFO] [load_based|medium|read_heavy] Progress: 60/600s (10%) — 56228 queries, 0 errors
+2026-04-09 17:11:57,184 [INFO] [load_based|medium|read_heavy] Progress: 120/600s (20%) — 117729 queries, 0 errors
+2026-04-09 17:12:57,182 [INFO] [load_based|medium|read_heavy] Progress: 180/600s (30%) — 173419 queries, 0 errors
+2026-04-09 17:13:57,179 [INFO] [load_based|medium|read_heavy] Progress: 240/600s (40%) — 230859 queries, 0 errors
+2026-04-09 17:14:57,182 [INFO] [load_based|medium|read_heavy] Progress: 300/600s (50%) — 293824 queries, 0 errors
+2026-04-09 17:15:57,182 [INFO] [load_based|medium|read_heavy] Progress: 360/600s (60%) — 350397 queries, 0 errors
+2026-04-09 17:16:57,184 [INFO] [load_based|medium|read_heavy] Progress: 420/600s (70%) — 414774 queries, 0 errors
+2026-04-09 17:17:57,185 [INFO] [load_based|medium|read_heavy] Progress: 480/600s (80%) — 473060 queries, 0 errors
+2026-04-09 17:18:57,184 [INFO] [load_based|medium|read_heavy] Progress: 540/600s (90%) — 526398 queries, 0 errors
+2026-04-09 17:19:57,180 [INFO] [load_based|medium|read_heavy] Progress: 600/600s (100%) — 581334 queries, 0 errors
+2026-04-09 17:19:58,271 [INFO] [load_based|medium|read_heavy] Benchmark complete: 581384 queries, 968.9 qps, read_avg=52.67ms, errors=0
+2026-04-09 17:19:58,273 [INFO] Stopping QueryRouter...
+2026-04-09 17:19:58,286 [INFO] Health checker stopped
+2026-04-09 17:19:58,587 [INFO] QueryRouter stopped
+2026-04-09 17:19:58,721 [INFO] [35/150] DONE in 603.9s: qps=968.9, read_avg=52.67ms
+2026-04-09 17:20:01,732 [INFO] 
+======================================================================
+2026-04-09 17:20:01,736 [INFO] [36/150] RUN: latency_based__medium__read_heavy__rep1
+2026-04-09 17:20:01,737 [INFO]   Strategy=latency_based, Complexity=medium, Workload=Read-Heavy (95:5), Rep=1, Seed=142
+2026-04-09 17:20:01,737 [INFO] ======================================================================
+2026-04-09 17:20:01,737 [INFO] [latency_based|medium|read_heavy] Starting benchmark run
+2026-04-09 17:20:01,738 [INFO] [latency_based|medium|read_heavy] Duration=600s, Concurrency=50, Warmup=1000, Seed=142
+2026-04-09 17:20:01,738 [INFO] Starting QueryRouter [strategy=Latency-Based]
+2026-04-09 17:20:01,832 [INFO] Primary pool created (localhost:5439)
+2026-04-09 17:20:01,926 [INFO] Replica pool created: replica1 (localhost:5440)
+2026-04-09 17:20:02,030 [INFO] Replica pool created: replica2 (localhost:5441)
+2026-04-09 17:20:02,139 [INFO] Replica pool created: replica3 (localhost:5442)
+2026-04-09 17:20:02,191 [INFO] Health probe pool created for replica1
+2026-04-09 17:20:02,245 [INFO] Health probe pool created for replica2
+2026-04-09 17:20:02,292 [INFO] Health probe pool created for replica3
+2026-04-09 17:20:02,292 [INFO] Health checker started (interval=5.0s, EMA alpha=0.3)
+2026-04-09 17:20:02,417 [INFO] QueryRouter ready
+2026-04-09 17:20:02,419 [INFO] [latency_based|medium|read_heavy] Warm-up: 1000 queries...
+2026-04-09 17:20:05,756 [INFO] [latency_based|medium|read_heavy] Warm-up complete
+2026-04-09 17:20:05,757 [INFO] [latency_based|medium|read_heavy] Benchmark starting (600s)...
+2026-04-09 17:21:05,759 [INFO] [latency_based|medium|read_heavy] Progress: 60/600s (10%) — 66728 queries, 0 errors
+2026-04-09 17:22:05,759 [INFO] [latency_based|medium|read_heavy] Progress: 120/600s (20%) — 135329 queries, 0 errors
+2026-04-09 17:23:05,758 [INFO] [latency_based|medium|read_heavy] Progress: 180/600s (30%) — 210016 queries, 0 errors
+2026-04-09 17:24:05,757 [INFO] [latency_based|medium|read_heavy] Progress: 240/600s (40%) — 279176 queries, 0 errors
+2026-04-09 17:25:05,759 [INFO] [latency_based|medium|read_heavy] Progress: 300/600s (50%) — 344951 queries, 0 errors
+2026-04-09 17:26:05,760 [INFO] [latency_based|medium|read_heavy] Progress: 360/600s (60%) — 404587 queries, 0 errors
+2026-04-09 17:27:05,759 [INFO] [latency_based|medium|read_heavy] Progress: 420/600s (70%) — 467625 queries, 0 errors
+2026-04-09 17:28:05,760 [INFO] [latency_based|medium|read_heavy] Progress: 480/600s (80%) — 525717 queries, 0 errors
+2026-04-09 17:29:05,758 [INFO] [latency_based|medium|read_heavy] Progress: 540/600s (90%) — 577113 queries, 0 errors
+2026-04-09 17:30:05,764 [INFO] [latency_based|medium|read_heavy] Progress: 600/600s (100%) — 626346 queries, 0 errors
+2026-04-09 17:30:07,020 [INFO] [latency_based|medium|read_heavy] Benchmark complete: 626406 queries, 1044.0 qps, read_avg=49.02ms, errors=0
+2026-04-09 17:30:07,021 [INFO] Stopping QueryRouter...
+2026-04-09 17:30:07,036 [INFO] Health checker stopped
+2026-04-09 17:30:07,443 [INFO] QueryRouter stopped
+2026-04-09 17:30:07,596 [INFO] [36/150] DONE in 605.9s: qps=1044.0, read_avg=49.02ms
+2026-04-09 17:30:10,601 [INFO] 
+======================================================================
+2026-04-09 17:30:10,605 [INFO] [37/150] RUN: latency_based__medium__read_heavy__rep2
+2026-04-09 17:30:10,606 [INFO]   Strategy=latency_based, Complexity=medium, Workload=Read-Heavy (95:5), Rep=2, Seed=242
+2026-04-09 17:30:10,606 [INFO] ======================================================================
+2026-04-09 17:30:10,607 [INFO] [latency_based|medium|read_heavy] Starting benchmark run
+2026-04-09 17:30:10,607 [INFO] [latency_based|medium|read_heavy] Duration=600s, Concurrency=50, Warmup=1000, Seed=242
+2026-04-09 17:30:10,607 [INFO] Starting QueryRouter [strategy=Latency-Based]
+2026-04-09 17:30:10,744 [INFO] Primary pool created (localhost:5439)
+2026-04-09 17:30:10,860 [INFO] Replica pool created: replica1 (localhost:5440)
+2026-04-09 17:30:10,992 [INFO] Replica pool created: replica2 (localhost:5441)
+2026-04-09 17:30:11,114 [INFO] Replica pool created: replica3 (localhost:5442)
+2026-04-09 17:30:11,172 [INFO] Health probe pool created for replica1
+2026-04-09 17:30:11,232 [INFO] Health probe pool created for replica2
+2026-04-09 17:30:11,298 [INFO] Health probe pool created for replica3
+2026-04-09 17:30:11,298 [INFO] Health checker started (interval=5.0s, EMA alpha=0.3)
+2026-04-09 17:30:11,467 [INFO] QueryRouter ready
+2026-04-09 17:30:11,469 [INFO] [latency_based|medium|read_heavy] Warm-up: 1000 queries...
+2026-04-09 17:30:16,136 [INFO] [latency_based|medium|read_heavy] Warm-up complete
+2026-04-09 17:30:16,137 [INFO] [latency_based|medium|read_heavy] Benchmark starting (600s)...
+2026-04-09 17:31:16,130 [INFO] [latency_based|medium|read_heavy] Progress: 60/600s (10%) — 51923 queries, 0 errors
+2026-04-09 17:32:16,134 [INFO] [latency_based|medium|read_heavy] Progress: 120/600s (20%) — 97111 queries, 0 errors

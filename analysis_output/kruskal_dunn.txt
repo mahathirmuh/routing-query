@@ -1,0 +1,123 @@
+--- Kruskal-Wallis + Dunn's Test for read_avg_ms ---
+
+Condition: read_heavy | simple
+Kruskal-Wallis: H=10.91, p=2.7573e-02 (*)
+Dunn's Post-hoc (p-values):
+               latency_based  least_conn  load_based  round_robin  weighted_rr
+latency_based         1.0000      1.0000       1.000       0.0284       0.2943
+least_conn            1.0000      1.0000       1.000       0.2868       1.0000
+load_based            1.0000      1.0000       1.000       0.2740       1.0000
+round_robin           0.0284      0.2868       0.274       1.0000       1.0000
+weighted_rr           0.2943      1.0000       1.000       1.0000       1.0000
+
+Condition: read_heavy | complex
+Kruskal-Wallis: H=18.81, p=8.5699e-04 (***)
+Dunn's Post-hoc (p-values):
+               latency_based  least_conn  load_based  round_robin  weighted_rr
+latency_based         1.0000      1.0000      1.0000       0.0031       0.0273
+least_conn            1.0000      1.0000      1.0000       0.0543       0.2350
+load_based            1.0000      1.0000      1.0000       0.0543       0.2350
+round_robin           0.0031      0.0543      0.0543       1.0000       1.0000
+weighted_rr           0.0273      0.2350      0.2350       1.0000       1.0000
+
+Condition: read_heavy | medium
+Kruskal-Wallis: H=17.77, p=1.3656e-03 (**)
+Dunn's Post-hoc (p-values):
+               latency_based  least_conn  load_based  round_robin  weighted_rr
+latency_based         1.0000      0.8643      0.8643       0.0009       0.0537
+least_conn            0.8643      1.0000      0.8974       0.0795       0.8643
+load_based            0.8643      0.8974      1.0000       0.1002       0.8643
+round_robin           0.0009      0.0795      0.1002       1.0000       0.8643
+weighted_rr           0.0537      0.8643      0.8643       0.8643       1.0000
+
+Condition: balanced | simple
+Kruskal-Wallis: H=16.72, p=2.1919e-03 (**)
+Dunn's Post-hoc (p-values):
+               latency_based  least_conn  load_based  round_robin  weighted_rr
+latency_based         1.0000      0.5140      0.5140       0.0008       0.0894
+least_conn            0.5140      1.0000      1.0000       0.1783       1.0000
+load_based            0.5140      1.0000      1.0000       0.1626       1.0000
+round_robin           0.0008      0.1783      0.1626       1.0000       0.6766
+weighted_rr           0.0894      1.0000      1.0000       0.6766       1.0000
+
+Condition: balanced | complex
+Kruskal-Wallis: H=18.17, p=1.1452e-03 (**)
+Dunn's Post-hoc (p-values):
+               latency_based  least_conn  load_based  round_robin  weighted_rr
+latency_based         1.0000      1.0000      1.0000       0.0022       0.0618
+least_conn            1.0000      1.0000      1.0000       0.0618       0.5126
+load_based            1.0000      1.0000      1.0000       0.0313       0.3521
+round_robin           0.0022      0.0618      0.0313       1.0000       1.0000
+weighted_rr           0.0618      0.5126      0.3521       1.0000       1.0000
+
+Condition: balanced | medium
+Kruskal-Wallis: H=16.86, p=2.0587e-03 (**)
+Dunn's Post-hoc (p-values):
+               latency_based  least_conn  load_based  round_robin  weighted_rr
+latency_based         1.0000      0.6766      0.4268       0.0006       0.1822
+least_conn            0.6766      1.0000      1.0000       0.0789       1.0000
+load_based            0.4268      1.0000      1.0000       0.1990       1.0000
+round_robin           0.0006      0.0789      0.1990       1.0000       0.4284
+weighted_rr           0.1822      1.0000      1.0000       0.4284       1.0000
+
+--- Kruskal-Wallis + Dunn's Test for throughput_qps ---
+
+Condition: read_heavy | simple
+Kruskal-Wallis: H=11.02, p=2.6395e-02 (*)
+Dunn's Post-hoc (p-values):
+               latency_based  least_conn  load_based  round_robin  weighted_rr
+latency_based         1.0000      1.0000      1.0000       0.0480       0.3712
+least_conn            1.0000      1.0000      1.0000       0.1143       0.6486
+load_based            1.0000      1.0000      1.0000       0.3638       1.0000
+round_robin           0.0480      0.1143      0.3638       1.0000       1.0000
+weighted_rr           0.3712      0.6486      1.0000       1.0000       1.0000
+
+Condition: read_heavy | complex
+Kruskal-Wallis: H=18.81, p=8.5699e-04 (***)
+Dunn's Post-hoc (p-values):
+               latency_based  least_conn  load_based  round_robin  weighted_rr
+latency_based         1.0000      1.0000      1.0000       0.0031       0.0273
+least_conn            1.0000      1.0000      1.0000       0.0543       0.2350
+load_based            1.0000      1.0000      1.0000       0.0543       0.2350
+round_robin           0.0031      0.0543      0.0543       1.0000       1.0000
+weighted_rr           0.0273      0.2350      0.2350       1.0000       1.0000
+
+Condition: read_heavy | medium
+Kruskal-Wallis: H=17.77, p=1.3656e-03 (**)
+Dunn's Post-hoc (p-values):
+               latency_based  least_conn  load_based  round_robin  weighted_rr
+latency_based         1.0000      0.8643      0.8643       0.0009       0.0537
+least_conn            0.8643      1.0000      0.8974       0.0795       0.8643
+load_based            0.8643      0.8974      1.0000       0.1002       0.8643
+round_robin           0.0009      0.0795      0.1002       1.0000       0.8643
+weighted_rr           0.0537      0.8643      0.8643       0.8643       1.0000
+
+Condition: balanced | simple
+Kruskal-Wallis: H=16.72, p=2.1919e-03 (**)
+Dunn's Post-hoc (p-values):
+               latency_based  least_conn  load_based  round_robin  weighted_rr
+latency_based         1.0000      0.5140      0.5140       0.0008       0.0894
+least_conn            0.5140      1.0000      1.0000       0.1783       1.0000
+load_based            0.5140      1.0000      1.0000       0.1626       1.0000
+round_robin           0.0008      0.1783      0.1626       1.0000       0.6766
+weighted_rr           0.0894      1.0000      1.0000       0.6766       1.0000
+
+Condition: balanced | complex
+Kruskal-Wallis: H=18.17, p=1.1452e-03 (**)
+Dunn's Post-hoc (p-values):
+               latency_based  least_conn  load_based  round_robin  weighted_rr
+latency_based         1.0000      1.0000      1.0000       0.0022       0.0618
+least_conn            1.0000      1.0000      1.0000       0.0618       0.5126
+load_based            1.0000      1.0000      1.0000       0.0313       0.3521
+round_robin           0.0022      0.0618      0.0313       1.0000       1.0000
+weighted_rr           0.0618      0.5126      0.3521       1.0000       1.0000
+
+Condition: balanced | medium
+Kruskal-Wallis: H=16.86, p=2.0587e-03 (**)
+Dunn's Post-hoc (p-values):
+               latency_based  least_conn  load_based  round_robin  weighted_rr
+latency_based         1.0000      0.6766      0.4268       0.0006       0.1822
+least_conn            0.6766      1.0000      1.0000       0.0789       1.0000
+load_based            0.4268      1.0000      1.0000       0.1990       1.0000
+round_robin           0.0006      0.0789      0.1990       1.0000       0.4284
+weighted_rr           0.1822      1.0000      1.0000       0.4284       1.0000

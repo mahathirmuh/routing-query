@@ -1,0 +1,153 @@
+# PostgreSQL Cluster: 1 Primary + 3 Heterogeneous Replicas
+
+services:
+  # ============================================================
+  # PRIMARY (read-write) — PostgreSQL 16
+  # ============================================================
+  pg_primary:
+    image: postgres:16
+    container_name: pg_primary
+    hostname: pg_primary
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: benchmark
+    ports:
+      - "5439:5432"
+    volumes:
+      - pg_primary_data:/var/lib/postgresql/data
+      - ./docker/primary/postgresql.conf:/etc/postgresql/postgresql.conf
+      - ./docker/primary/pg_hba.conf:/etc/postgresql/pg_hba.conf
+      - ./docker/primary/init.sql:/docker-entrypoint-initdb.d/01_init.sql
+      - ./docker/primary/setup_replication.sh:/docker-entrypoint-initdb.d/00_setup_replication.sh
+    command: postgres -c config_file=/etc/postgresql/postgresql.conf -c hba_file=/etc/postgresql/pg_hba.conf
+    deploy:
+      resources:
+        limits:
+          cpus: "2.0"
+          memory: 512M
+    networks:
+      - pg_network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d benchmark"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  # ============================================================
+  # REPLICA 1 — High resource (2 CPU)
+  # ============================================================
+  pg_replica1:
+    image: postgres:16
+    container_name: pg_replica1
+    hostname: pg_replica1
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      PGUSER: postgres
+      PGPASSWORD: postgres
+      PRIMARY_HOST: pg_primary
+      REPLICA_NAME: replica1
+    ports:
+      - "5440:5432"
+    volumes:
+      - pg_replica1_data:/var/lib/postgresql/data
+      - ./docker/replica/entrypoint.sh:/entrypoint.sh
+    entrypoint: ["/bin/bash", "/entrypoint.sh"]
+    deploy:
+      resources:
+        limits:
+          cpus: "2.0"
+          memory: 384M
+    depends_on:
+      pg_primary:
+        condition: service_healthy
+    networks:
+      - pg_network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  # ============================================================
+  # REPLICA 2 — Medium resource (1 CPU)
+  # ============================================================
+  pg_replica2:
+    image: postgres:16
+    container_name: pg_replica2
+    hostname: pg_replica2
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      PGUSER: postgres
+      PGPASSWORD: postgres
+      PRIMARY_HOST: pg_primary
+      REPLICA_NAME: replica2
+    ports:
+      - "5441:5432"
+    volumes:
+      - pg_replica2_data:/var/lib/postgresql/data
+      - ./docker/replica/entrypoint.sh:/entrypoint.sh
+    entrypoint: ["/bin/bash", "/entrypoint.sh"]
+    deploy:
+      resources:
+        limits:
+          cpus: "1.0"
+          memory: 384M
+    depends_on:
+      pg_primary:
+        condition: service_healthy
+    networks:
+      - pg_network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  # ============================================================
+  # REPLICA 3 — Low resource (0.5 CPU)
+  # ============================================================
+  pg_replica3:
+    image: postgres:16
+    container_name: pg_replica3
+    hostname: pg_replica3
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      PGUSER: postgres
+      PGPASSWORD: postgres
+      PRIMARY_HOST: pg_primary
+      REPLICA_NAME: replica3
+    ports:
+      - "5442:5432"
+    volumes:
+      - pg_replica3_data:/var/lib/postgresql/data
+      - ./docker/replica/entrypoint.sh:/entrypoint.sh
+    entrypoint: ["/bin/bash", "/entrypoint.sh"]
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 384M
+    depends_on:
+      pg_primary:
+        condition: service_healthy
+    networks:
+      - pg_network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  pg_primary_data:
+  pg_replica1_data:
+  pg_replica2_data:
+  pg_replica3_data:
+
+networks:
+  pg_network:
+    driver: bridge

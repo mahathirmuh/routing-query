@@ -1,0 +1,59 @@
+{
+  "read_avg_ms": 52.352994177977436,
+  "read_p95_ms": 100.16309999627993,
+  "throughput_qps": 954.5446971868664,
+  "load_cv": 0.7469184641425143,
+  "per_replica_cpu": {
+    "replica1": 10.747863247863247,
+    "replica2": 7.747863247863248,
+    "replica3": 8.773504273504274
+  },
+  "avg_cpu_pct": 9.08974358974359,
+  "staleness_pct": 0.0,
+  "router_overhead_ms": 0.023348786728789307,
+  "replica_query_counts": {
+    "replica3": 77771,
+    "replica1": 311083,
+    "replica2": 155542,
+    "primary": 28495
+  },
+  "total_queries": 572891,
+  "total_reads": 544396,
+  "total_writes": 28495,
+  "duration_s": 600.1719999999623,
+  "config": {
+    "strategy": "weighted_rr",
+    "complexity": "simple",
+    "workload": "read_heavy",
+    "duration_s": 600,
+    "concurrency": 50,
+    "seed": 442
+  },
+  "errors": 0,
+  "replica_states": [
+    {
+      "name": "replica1",
+      "healthy": true,
+      "ema_latency_ms": 82.52,
+      "cpu_pct": 10.5,
+      "active_connections": 2,
+      "weight": 4
+    },
+    {
+      "name": "replica2",
+      "healthy": true,
+      "ema_latency_ms": 59.44,
+      "cpu_pct": 7.5,
+      "active_connections": 2,
+      "weight": 2
+    },
+    {
+      "name": "replica3",
+      "healthy": true,
+      "ema_latency_ms": 56.23,
+      "cpu_pct": 7.0,
+      "active_connections": 1,
+      "weight": 1
+    }
+  ]
+}

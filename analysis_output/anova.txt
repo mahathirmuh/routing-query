@@ -1,0 +1,17 @@
+--- Two-way ANOVA (read_avg_ms: Strategy x Complexity) ---
+
+Workload: read_heavy
+ANOVA Table:
+                                 sum_sq    df            F        PR(>F)
+C(strategy)                 1771.092474   4.0    41.963783  2.383857e-17
+C(complexity)              88750.548452   2.0  4205.662670  1.790344e-69
+C(strategy):C(complexity)   1294.466015   8.0    15.335363  2.163440e-12
+Residual                     685.835515  65.0          NaN           NaN
+
+Workload: balanced
+ANOVA Table:
+                                 sum_sq    df            F        PR(>F)
+C(strategy)                 1923.509108   4.0    37.781998  9.116967e-16
+C(complexity)              82689.997452   2.0  3248.431031  6.976797e-62
+C(strategy):C(complexity)   1331.907859   8.0    13.080817  1.043843e-10
+Residual                     763.660949  60.0          NaN           NaN

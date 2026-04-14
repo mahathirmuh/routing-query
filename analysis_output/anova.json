@@ -1,0 +1,22 @@
+[
+  {
+    "error": "r_matrix performs f_test for using dimensions that are asymptotically non-normal",
+    "metric": "read_avg_ms",
+    "workload": "read_heavy"
+  },
+  {
+    "error": "r_matrix performs f_test for using dimensions that are asymptotically non-normal",
+    "metric": "read_p95_ms",
+    "workload": "read_heavy"
+  },
+  {
+    "error": "r_matrix performs f_test for using dimensions that are asymptotically non-normal",
+    "metric": "throughput_qps",
+    "workload": "read_heavy"
+  },
+  {
+    "error": "r_matrix performs f_test for using dimensions that are asymptotically non-normal",
+    "metric": "load_cv",
+    "workload": "read_heavy"
+  }
+]

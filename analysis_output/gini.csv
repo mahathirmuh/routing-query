@@ -1,0 +1,6 @@
+strategy,gini_mean,gini_std
+latency_based,0.0,
+least_conn,0.2711288292068821,
+load_based,0.35073266257005875,
+round_robin,2.299405603651456e-05,
+weighted_rr,0.28571100469677657,

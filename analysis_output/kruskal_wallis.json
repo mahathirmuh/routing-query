@@ -1,0 +1,105 @@
+[
+  {
+    "metric": "read_avg_ms",
+    "test": "Kruskal-Wallis",
+    "h_statistic": 4.0,
+    "p_value": 0.40600584970983794,
+    "significant": "False",
+    "n_groups": 5,
+    "group_medians": {
+      "latency_based": 8.90807795603765,
+      "least_conn": 11.267867817895088,
+      "load_based": 9.471585164458915,
+      "round_robin": 9.50149310517349,
+      "weighted_rr": 9.473892872260638
+    },
+    "workload": "read_heavy",
+    "complexity": "simple"
+  },
+  {
+    "metric": "read_p95_ms",
+    "test": "Kruskal-Wallis",
+    "h_statistic": 4.0,
+    "p_value": 0.40600584970983794,
+    "significant": "False",
+    "n_groups": 5,
+    "group_medians": {
+      "latency_based": 15.123800025321543,
+      "least_conn": 22.87460002116859,
+      "load_based": 15.674999973271042,
+      "round_robin": 16.40739996219054,
+      "weighted_rr": 14.390700031071901
+    },
+    "workload": "read_heavy",
+    "complexity": "simple"
+  },
+  {
+    "metric": "throughput_qps",
+    "test": "Kruskal-Wallis",
+    "h_statistic": 4.0,
+    "p_value": 0.40600584970983794,
+    "significant": "False",
+    "n_groups": 5,
+    "group_medians": {
+      "latency_based": 1085.9,
+      "least_conn": 836.8740010653485,
+      "load_based": 1026.639479051571,
+      "round_robin": 1018.1333333333333,
+      "weighted_rr": 1019.3333333333334
+    },
+    "workload": "read_heavy",
+    "complexity": "simple"
+  },
+  {
+    "metric": "load_cv",
+    "test": "Kruskal-Wallis",
+    "h_statistic": 4.0,
+    "p_value": 0.40600584970983794,
+    "significant": "False",
+    "n_groups": 5,
+    "group_medians": {
+      "latency_based": 0.8971667127114221,
+      "least_conn": 0.8678017393020475,
+      "load_based": 0.9289046228625524,
+      "round_robin": 0.46008072442890224,
+      "weighted_rr": 0.7449187983541485
+    },
+    "workload": "read_heavy",
+    "complexity": "simple"
+  },
+  {
+    "metric": "staleness_pct",
+    "test": "Kruskal-Wallis",
+    "h_statistic": 0.0,
+    "p_value": 1.0,
+    "significant": false,
+    "note": "Test skipped: All numbers are identical in kruskal",
+    "n_groups": 5,
+    "group_medians": {
+      "latency_based": 0.0,
+      "least_conn": 0.0,
+      "load_based": 0.0,
+      "round_robin": 0.0,
+      "weighted_rr": 0.0
+    },
+    "workload": "read_heavy",
+    "complexity": "simple"
+  },
+  {
+    "metric": "router_overhead_ms",
+    "test": "Kruskal-Wallis",
+    "h_statistic": 4.0,
+    "p_value": 0.40600584970983794,
+    "significant": "False",
+    "n_groups": 5,
+    "group_medians": {
+      "latency_based": 0.009930920585536311,
+      "least_conn": 0.01163068869507392,
+      "load_based": 0.009696411974794341,
+      "round_robin": 0.005511174100580332,
+      "weighted_rr": 0.02515292037787017
+    },
+    "workload": "read_heavy",
+    "complexity": "simple"
+  }
+]
